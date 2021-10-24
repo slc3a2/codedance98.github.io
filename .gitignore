@@ -81,7 +81,6 @@ typings/
 # Nuxt.js build / generate output
 .nuxt
 dist
-public/
 
 .deploy_git
 
@@ -114,3 +113,6 @@ Thumbs.db
 */.idea/
 okay-conf.js
 .vscode/
+
+public
+db.json
