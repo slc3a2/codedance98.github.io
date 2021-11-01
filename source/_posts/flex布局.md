@@ -28,7 +28,7 @@ tags: [css]
   
 ```css  
 flex-direction: row(默认) | row-reverse | column | column-reverse
-```  
+```
 **row**： 从左往右水平展示    
 **row-reverse**： 从右向左(反向)水平展示    
 **column**： 从上往下垂直展示  
@@ -39,7 +39,7 @@ flex-direction: row(默认) | row-reverse | column | column-reverse
 
 ```css  
 flex-wrap: nowrap(默认) | wrap | wrap-reverse
-```  
+```
 **nowrap**： 不换行，只展示一行。如果容器不够宽，平均缩小每个`item`的宽度  
 **wrap**： 换行，向下换行  
 **wrap-reverse**： 以相反方向换行，向上换行
@@ -49,7 +49,7 @@ flex-wrap: nowrap(默认) | wrap | wrap-reverse
 
 ```css  
 justify-content: flex-start(默认值) | flex-end | center | space-between | space-around
-```  
+```
 **flex-start**： 整体位于容器开头  
 **flex-end**： 整体位于容器结尾  
 **center**： 整体位于容器中心  
@@ -61,7 +61,7 @@ justify-content: flex-start(默认值) | flex-end | center | space-between | spa
 
 ```css  
 align-items: stretch(默认值) | center | flex-start | flex-end | baseline
-```  
+```
 **stretch**： 整体占满整个主轴的高度, 前提必须是你没有设置item的高度(宽度)，否则不生效  
 **center**： 整体位于主轴中心   
 **flex-start**： 整体位于主轴开头    
@@ -75,7 +75,7 @@ align-items: stretch(默认值) | center | flex-start | flex-end | baseline
 
 ```css  
 align-content: stretch(默认) | center | flex-start | flex-end | space-between | space-around
-```  
+```
 **stretch**： 整体被拉伸以适应容器  
 **center**： 整体内各个轴紧靠，并且位于容器中心，头尾留白   
 **flex-start**： 整体内各个轴紧靠，并且位于容器头部    
@@ -95,14 +95,14 @@ align-content: stretch(默认) | center | flex-start | flex-end | space-between 
 
 ```css  
 order: 0(默认值) | <number>  
-```      
+```
 
 ### flex-basis  
 `flex-basis `属性规定了当前`flex item`的高度(主轴为水平轴则是高度，如果主轴为竖直轴则是宽度，主轴通过`flex-direction`设置)的伸缩比例或大小
 
 ```css  
 flex-basis: auto(默认) | number
-```  
+```
 **number**： 可以是具体的像素值，如30px；也可以是auto大小百分比
   
 ### flex-grow    
@@ -111,7 +111,7 @@ flex-basis: auto(默认) | number
 
 ```css  
 flex-grow: 0(默认值) | <number>;
-```  
+```
 **number**：当剩余空间足够时，如果值为`1`那么高度(宽度)`放大剩余空间1份`，如果只有一个元素设置了此属性，那么剩余全部全部分给他；如果多个元素设置了此属性，比如`a:1` `b:2` `c:3`则会把剩余空间分成`6份`，a在本身的大小基础上增加剩余空间的`1/6份` a则是`2/6份` c则是`3/6份`，如果剩余空间不足，则取`剩余空间最大值`，不支持负数
  
 ### flex-shrink    
@@ -120,7 +120,7 @@ flex-grow: 0(默认值) | <number>;
 
 ```css  
 flex-shrink: 1(默认值) | <number>;
-``` 
+```
 **number**：当剩余空间不足时，默认按照比例1缩小，如果值为`2`那么高度(宽度)`缩小超出空间2份`
   
 ### align-self     
@@ -131,7 +131,7 @@ flex-shrink: 1(默认值) | <number>;
 
 ```css  
 align-self: auto(默认值) | stretch | center | flex-start | flex-end | baseline
-``` 
+```
 **auto**：继承父亲`align-item`的`value`  
 **stretch**： 占满整个主轴的高度, 前提必须是你没有设置item的高度(宽度)，否则不生效  
 **center**： 位于主轴中心   
@@ -147,7 +147,7 @@ align-self: auto(默认值) | stretch | center | flex-start | flex-end | baselin
 	<p>1</p>
 	<p>2</p>
 </div>
-```  
+```
 
 ```css
 div.flex2{
