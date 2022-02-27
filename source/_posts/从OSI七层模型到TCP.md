@@ -132,7 +132,7 @@ client.on('close', err => {
 });
 ```
 
-![903kj94rnyoOIrs](./从OSI七层模型到HTTP/903kj94rnyoOIrs.png)
+![903kj94rnyoOIrs](./从OSI七层模型到TCP/903kj94rnyoOIrs.png)
 
 ## 使用 nodejs 实现 UDP 连接
 
@@ -191,5 +191,5 @@ function sendMsg(_msg) {
 }
 ```
 
-![image-20220222230031275](./从OSI七层模型到HTTP/image-20220222230031275.png)
+![image-20220222230031275](./从OSI七层模型到TCP/image-20220222230031275.png)
 
