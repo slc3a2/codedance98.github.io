@@ -11,11 +11,12 @@ desc: "👋 This is codedance98. welcome. here is just to record some fun 😁"
 
 #menu
 menu:
+  Sponsor: /sponsor
   # Works: /Works
   # About: /About
 
 #index/main page max show posts (in number)
-max_post: 7
+max_post: 10
 
 # Colors use hex color without #
 # Theme color
