@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: codedance98's blog
+title: slc3a2's blog
 subtitle: ''
 description: ''
 keywords:
-author: codedance98
+author: slc3a2
 language: zh-cn
 timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://codedance98.github.io
+url: https://slc3a2.github.io
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -103,5 +103,5 @@ theme: minima
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git 
-  repo: git@github.com:codedance98/codedance98.github.io.git 
+  repo: git@github.com:slc3a2/slc3a2.github.io.git 
   branch: publish
