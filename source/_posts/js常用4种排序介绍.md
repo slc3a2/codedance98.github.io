@@ -151,4 +151,4 @@ function quickSort(arr) {
 <hr>
 
 本文动画参考：[掘金](https://juejin.im/post/6844903444365443080)    
-本文例子查看：[GitHub](https://github.com/codedance98/docs/tree/main/javascript_sort)
+本文例子查看：[GitHub](https://github.com/slc3a2/docs/tree/main/javascript_sort)
