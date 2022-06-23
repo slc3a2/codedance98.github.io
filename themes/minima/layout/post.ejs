@@ -1,5 +1,8 @@
-  <h2><%- page.title %></h2>
+<h2><%- page.title %></h2>
 
-  <%- page.content%>
-  <p><%- list_tags(page.tags, {class: 'classtest', show_count: false, style: false}) %> — <%- full_date(page.date, 'll') %></p>
-  <%- partial('partial/comments') %>
+<% if (theme.mathjax){ %> <%- partial('mathjax') %> <% } %> <%- page.content%>
+<p>
+  <%- list_tags(page.tags, {class: 'classtest', show_count: false, style:
+  false}) %> — <%- full_date(page.date, 'll') %>
+</p>
+<%- partial('partial/comments') %>
