@@ -57,3 +57,5 @@ disqus_shortname: https-adisaktijrs-github-io
 mathjax:
   enable: true
   cdn: https://cdn.jsdelivr.net/npm/mathjax@2.7.8/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+
+google_analytics: 'G-52Y2B2P1QW'
