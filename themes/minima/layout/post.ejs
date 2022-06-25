@@ -1,11 +1,12 @@
-<h2 class="center"><%- page.title %></h2>
+<h1><%- page.title %></h1>
 
 <% if (theme.mathjax){ %> <%- partial('mathjax') %> <% } %> <%- page.content%>
 
 <p style="font-style:italic;">
-  <%- list_tags(page.tags, {class: 'classtest', show_count: false, style:
-  false}) %> — <%- full_date(page.date, 'll') %>
-  被浏览 <span id="busuanzi_value_page_pv">-</span> 次
+  <!-- <%- list_tags(page.tags, {class: 'classtest', show_count: false, style:
+  false}) %>  -->
+  <!-- <%- full_date(page.date, 'll') %> -->
+  被浏览 <span id="busuanzi_value_page_pv">-</span> 次 - <%- full_date(page.date, 'll') %>
 </p>
 
 <%- partial('partial/comments') %>
