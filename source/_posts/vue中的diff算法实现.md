@@ -1,19 +1,19 @@
 ---
-title: diff算法简介
+title: vue 中的 diff 算法实现
 date: 2020/11/05 18:36:39
 tags: [前端]
 ---
 
-## diff算法和virtual dom
+## diff算法 和 virtual dom
 
-![WechatIMG3177.png](./diff算法简介/HrGjhDp8ebSt62R.png)  
+![WechatIMG3177.png](./vue中的diff算法实现/HrGjhDp8ebSt62R.png)  
 
-在现代`mvvm`框架`react`和`vue`中，因为直接操作dom相对是要耗费更多性能的，所以`react`和`vue`都使用了`virtual dom`来替代处理dom，大致的过程是：按照dom结构生成一份`virtual dom`为`js`对象树状格式。如果数据有更新，需要表现在dom上，那么先把变化表现在`virtual dom`，再通过`diff`算法比对数据更新前后两次`virtual dom`找到差别。最后把仅仅改变的这部分更新到dom上，不用重新渲染整个页面。  
+在现代 `mvvm` 框架 `react` 和 `vue` 中，因为直接操作dom相对是要耗费更多性能的，所以 `react` 和 `vue` 都使用了 `virtual dom` 来替代处理dom，大致的过程是：按照dom结构生成一份 `virtual dom` 为对象结构。如果数据有更新，需要表现在dom上，那么先把变化表现在 `virtual dom`，再通过 `diff` 算法比对数据更新前后两次 `virtual dom` 找到差别。最后把仅仅改变的这部分更新到dom上，不用重新渲染整个页面。  
 
-总结：`diff`算法就是找到两个`virtual dom`树结构的不同  
+总结：`diff` 算法就是找到两个 `virtual dom` 树结构的不同  
 
 ## diff原理 
-首先传入新旧`vnode`到`patch`函数开始比较:  
+首先传入新旧 `vnode` 到 `patch` 函数开始比较:  
 
 ```javascript
 function patch (oldVnode, vnode) {
@@ -32,7 +32,7 @@ function patch (oldVnode, vnode) {
     return vnode
 }
 ```
-首先使用`sameVnode`方法判断两个`vnode`是否值得比较，代码如下
+首先使用 `sameVnode` 方法判断两个 `vnode` 是否值得比较，代码如下
 
 ```javascript
 function sameVnode(oldVnode, vnode){
@@ -41,9 +41,9 @@ function sameVnode(oldVnode, vnode){
 }
 ```
 
-一致就按照上步骤，继续往下处理。执行`patchVnode`方法，如不一致，直接用新元素**直接替换**到旧元素。  
+一致就按照上步骤，继续往下处理。执行 `patchVnode` 方法，如不一致，直接用新元素 **直接替换** 到旧元素。  
 
-如果两个`vnode`值得比较，调用`patchVnode`:
+如果两个 `vnode` 值得比较，调用 `patchVnode`:
 
 ```javascript
 patchVnode (oldVnode, vnode) {
@@ -68,7 +68,7 @@ patchVnode (oldVnode, vnode) {
 }
 ```
 
-如果都有子节点，且不同，开始比较子节点，调用`updateChildren`函数开始比较子节点:
+如果都有子节点，且不同，开始比较子节点，调用 `updateChildren` 函数开始比较子节点:
 
 ```javascript
 updateChildren (parentElm, oldCh, newCh) { // parentElm：真是dom节点。oldCh：老vnode的所有子节点。newCh：新vnode的所有子节点。
@@ -148,11 +148,11 @@ updateChildren (parentElm, oldCh, newCh) { // parentElm：真是dom节点。oldC
 
 总结：    
 
- - **调用patch**：传入`新旧vnode`，调用`sameVnode`，返回`true`说明值得比较，则调用`patchVnode`，否则直接使用新节点替换旧节点  
+ - **调用patch**：传入 `新旧vnode`，调用 `sameVnode`，返回 `true` 说明值得比较，则调用 `patchVnode`，否则直接使用新节点替换旧节点  
 
  - **调用patchVnode**：更详细的对比新旧vnode，分几种情况：  
  	- 1: 对于新旧vnode的.el真实dom属性，并对比，如果===那就证明是同一个，直接return
  	- 2: 如果存在文本节点，直接用新vnode内文本替换旧vnode文本
  	- 3: 判断子节点，如果新vnode有，旧vnode没有，则直接把新vnode的子节点加入到真实dom，相反就删除掉真实dom子节点
  	- 4: 如果都有子节点，且不同，调用updateChildren，详细对比
- - **调用updateChildren**： 从两边向中间收拢循环两个新旧vnode的每个子节点，以此对比，头头，尾尾，头尾，尾头。如果这四种比对调用sameVnode，得到true，证明值得对比，那么就调用第二步骤的`patchVnode`递归继续比，除了这四种情况。如果有key，则会对比key。否则直接替换新元素到真实dom。
+ - **调用updateChildren**： 从两边向中间收拢循环两个新旧vnode的每个子节点，以此对比，头头，尾尾，头尾，尾头。如果这四种比对调用sameVnode，得到true，证明值得对比，那么就调用第二步骤的 `patchVnode` 递归继续比，除了这四种情况。如果有key，则会对比key。否则直接替换新元素到真实dom。
