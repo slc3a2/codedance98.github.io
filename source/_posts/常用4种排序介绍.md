@@ -1,7 +1,7 @@
 ---
-title: js常用4种排序介绍
+title: 常用4种排序介绍
 date: 2020/10/09 16:07:43
-tags: [前端]
+tags: [算法]
 ---
 
 ## 冒泡排序（Bubble sort）
@@ -70,7 +70,7 @@ function bubbleSort(arr) {
 
 #### 冒泡排序动画演示：
 
-![bubble sort.gif](./js常用4种排序介绍/KWrN6slZTEFAuhv.gif)
+![bubble sort.gif](./常用4种排序介绍/KWrN6slZTEFAuhv.gif)
 
 ## 选择排序（Selection Sort）
 
@@ -101,7 +101,7 @@ function selectionSort(arr) {
 
 #### 选择排序动画演示：
 
-![section sort.gif](./js常用4种排序介绍/ibLoIgDEnRJrUas.gif)
+![section sort.gif](./常用4种排序介绍/ibLoIgDEnRJrUas.gif)
 
 ## 插入排序（Insertion Sort）
 
@@ -135,7 +135,7 @@ function insertionSort(arr) {
 
 #### 插入排序动画演示：
 
-![insertion sort.gif](./js常用4种排序介绍/5z82iWpVIJbLfu7.gif)
+![insertion sort.gif](./常用4种排序介绍/5z82iWpVIJbLfu7.gif)
 
 ## 快速排序（Quick Sort）
 
@@ -172,7 +172,7 @@ function quickSort(arr) {
 
 #### 快速排序动画演示：
 
-![quick sort.gif](./js常用4种排序介绍/DzWckAlLmVU9JuN.gif)
+![quick sort.gif](./常用4种排序介绍/DzWckAlLmVU9JuN.gif)
 
 <hr>
 
