@@ -11,11 +11,11 @@
   <meta charset="utf-8">
 
   
-  <title>diff算法简介</title>
+  <title>vue 中的 diff 算法实现</title>
   
-  <link rel="canonical" href="https://slc3a2.github.io/2020/11/05/diff%E7%AE%97%E6%B3%95%E7%AE%80%E4%BB%8B/">
+  <link rel="canonical" href="https://slc3a2.github.io/2020/11/05/vue%E4%B8%AD%E7%9A%84diff%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0/">
   
-  <meta name="description" content="diff算法和virtual dom   在现代mvvm框架react和vue中，因为直接操作dom相对是要耗费更多性能的，所以react和vue都使用了virtual dom来替代处理dom，大致的过程是：按照dom结构生成一份virtual dom为js对象树状格式。如果数据有更新，需要表现在d">
+  <meta name="description" content="diff算法 和 virtual dom   在现代 mvvm 框架 react 和 vue 中，因为直接操作dom相对是要耗费更多性能的，所以 react 和 vue 都使用了 virtual dom 来替代处理dom，大致的过程是：按照dom结构生成一份 virtual dom 为对象结构。如果">
   
   
   <meta name="author" content="slc3a2">
@@ -24,21 +24,21 @@
   
   <meta property="og:site_name" content="slc3a2&#39;s blog" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="diff算法简介" />
+  <meta property="og:title" content="vue 中的 diff 算法实现" />
   
-  <meta property="og:description" content="diff算法和virtual dom   在现代mvvm框架react和vue中，因为直接操作dom相对是要耗费更多性能的，所以react和vue都使用了virtual dom来替代处理dom，大致的过程是：按照dom结构生成一份virtual dom为js对象树状格式。如果数据有更新，需要表现在d">
+  <meta property="og:description" content="diff算法 和 virtual dom   在现代 mvvm 框架 react 和 vue 中，因为直接操作dom相对是要耗费更多性能的，所以 react 和 vue 都使用了 virtual dom 来替代处理dom，大致的过程是：按照dom结构生成一份 virtual dom 为对象结构。如果">
   
-  <meta property="og:url" content="https://slc3a2.github.io/2020/11/05/diff%E7%AE%97%E6%B3%95%E7%AE%80%E4%BB%8B/" />
+  <meta property="og:url" content="https://slc3a2.github.io/2020/11/05/vue%E4%B8%AD%E7%9A%84diff%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0/" />
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="diff算法简介">
+  <meta name="twitter:title" content="vue 中的 diff 算法实现">
   
-  <meta name="twitter:description" content="diff算法和virtual dom   在现代mvvm框架react和vue中，因为直接操作dom相对是要耗费更多性能的，所以react和vue都使用了virtual dom来替代处理dom，大致的过程是：按照dom结构生成一份virtual dom为js对象树状格式。如果数据有更新，需要表现在d">
+  <meta name="twitter:description" content="diff算法 和 virtual dom   在现代 mvvm 框架 react 和 vue 中，因为直接操作dom相对是要耗费更多性能的，所以 react 和 vue 都使用了 virtual dom 来替代处理dom，大致的过程是：按照dom结构生成一份 virtual dom 为对象结构。如果">
   
   
   <meta name="twitter:image" content="https://slc3a2.github.ioundefined">
   
-  <meta name="twitter:url" content="https://slc3a2.github.io/2020/11/05/diff%E7%AE%97%E6%B3%95%E7%AE%80%E4%BB%8B/" />
+  <meta name="twitter:url" content="https://slc3a2.github.io/2020/11/05/vue%E4%B8%AD%E7%9A%84diff%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0/" />
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -194,7 +194,7 @@
 </div>
 
         <div class="trans">
-          <h1>diff算法简介</h1>
+          <h1>vue 中的 diff 算法实现</h1>
 
  
 <script type="text/x-mathjax-config">
@@ -214,10 +214,10 @@
 </script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@2.7.8/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
-  <h2 id="diff算法和virtual-dom"><a href="#diff算法和virtual-dom" class="headerlink" title="diff算法和virtual dom"></a>diff算法和virtual dom</h2><p><img src="/2020/11/05/diff%E7%AE%97%E6%B3%95%E7%AE%80%E4%BB%8B/HrGjhDp8ebSt62R.png" alt="WechatIMG3177.png">  </p>
-<p>在现代<code>mvvm</code>框架<code>react</code>和<code>vue</code>中，因为直接操作dom相对是要耗费更多性能的，所以<code>react</code>和<code>vue</code>都使用了<code>virtual dom</code>来替代处理dom，大致的过程是：按照dom结构生成一份<code>virtual dom</code>为<code>js</code>对象树状格式。如果数据有更新，需要表现在dom上，那么先把变化表现在<code>virtual dom</code>，再通过<code>diff</code>算法比对数据更新前后两次<code>virtual dom</code>找到差别。最后把仅仅改变的这部分更新到dom上，不用重新渲染整个页面。  </p>
-<p>总结：<code>diff</code>算法就是找到两个<code>virtual dom</code>树结构的不同  </p>
-<h2 id="diff原理"><a href="#diff原理" class="headerlink" title="diff原理"></a>diff原理</h2><p>首先传入新旧<code>vnode</code>到<code>patch</code>函数开始比较:  </p>
+  <h2 id="diff算法-和-virtual-dom"><a href="#diff算法-和-virtual-dom" class="headerlink" title="diff算法 和 virtual dom"></a>diff算法 和 virtual dom</h2><p><img src="/2020/11/05/vue%E4%B8%AD%E7%9A%84diff%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0/HrGjhDp8ebSt62R.png" alt="WechatIMG3177.png">  </p>
+<p>在现代 <code>mvvm</code> 框架 <code>react</code> 和 <code>vue</code> 中，因为直接操作dom相对是要耗费更多性能的，所以 <code>react</code> 和 <code>vue</code> 都使用了 <code>virtual dom</code> 来替代处理dom，大致的过程是：按照dom结构生成一份 <code>virtual dom</code> 为对象结构。如果数据有更新，需要表现在dom上，那么先把变化表现在 <code>virtual dom</code>，再通过 <code>diff</code> 算法比对数据更新前后两次 <code>virtual dom</code> 找到差别。最后把仅仅改变的这部分更新到dom上，不用重新渲染整个页面。  </p>
+<p>总结：<code>diff</code> 算法就是找到两个 <code>virtual dom</code> 树结构的不同  </p>
+<h2 id="diff原理"><a href="#diff原理" class="headerlink" title="diff原理"></a>diff原理</h2><p>首先传入新旧 <code>vnode</code> 到 <code>patch</code> 函数开始比较:  </p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">patch</span> <span class="token punctuation">(</span><span class="token parameter">oldVnode<span class="token punctuation">,</span> vnode</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">sameVnode</span><span class="token punctuation">(</span>oldVnode<span class="token punctuation">,</span> vnode<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
         <span class="token function">patchVnode</span><span class="token punctuation">(</span>oldVnode<span class="token punctuation">,</span> vnode<span class="token punctuation">)</span> <span class="token comment">// 如果两个vnode值得比较，调用patchVnode</span>
@@ -233,14 +233,14 @@
     <span class="token punctuation">&#125;</span>
     <span class="token keyword">return</span> vnode
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>首先使用<code>sameVnode</code>方法判断两个<code>vnode</code>是否值得比较，代码如下</p>
+<p>首先使用 <code>sameVnode</code> 方法判断两个 <code>vnode</code> 是否值得比较，代码如下</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">sameVnode</span><span class="token punctuation">(</span><span class="token parameter">oldVnode<span class="token punctuation">,</span> vnode</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
 	<span class="token comment">//  key代表当前节点数据的key属性，大概的意思就是div和span为不同标签。p.class1和p.class2为不同标签</span>
 	<span class="token keyword">return</span> vnode<span class="token punctuation">.</span>key <span class="token operator">===</span> oldVnode<span class="token punctuation">.</span>key <span class="token operator">&amp;&amp;</span> vnode<span class="token punctuation">.</span>sel <span class="token operator">===</span> oldVnode<span class="token punctuation">.</span>sel
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>一致就按照上步骤，继续往下处理。执行<code>patchVnode</code>方法，如不一致，直接用新元素<strong>直接替换</strong>到旧元素。  </p>
-<p>如果两个<code>vnode</code>值得比较，调用<code>patchVnode</code>:</p>
+<p>一致就按照上步骤，继续往下处理。执行 <code>patchVnode</code> 方法，如不一致，直接用新元素 <strong>直接替换</strong> 到旧元素。  </p>
+<p>如果两个 <code>vnode</code> 值得比较，调用 <code>patchVnode</code>:</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token function">patchVnode</span> <span class="token punctuation">(</span><span class="token parameter">oldVnode<span class="token punctuation">,</span> vnode</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     <span class="token keyword">const</span> el <span class="token operator">=</span> vnode<span class="token punctuation">.</span>el <span class="token operator">=</span> oldVnode<span class="token punctuation">.</span>el
     <span class="token keyword">let</span> i<span class="token punctuation">,</span> oldCh <span class="token operator">=</span> oldVnode<span class="token punctuation">.</span>children<span class="token punctuation">,</span> ch <span class="token operator">=</span> vnode<span class="token punctuation">.</span>children
@@ -262,7 +262,7 @@
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>如果都有子节点，且不同，开始比较子节点，调用<code>updateChildren</code>函数开始比较子节点:</p>
+<p>如果都有子节点，且不同，开始比较子节点，调用 <code>updateChildren</code> 函数开始比较子节点:</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token function">updateChildren</span> <span class="token punctuation">(</span><span class="token parameter">parentElm<span class="token punctuation">,</span> oldCh<span class="token punctuation">,</span> newCh</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">// parentElm：真是dom节点。oldCh：老vnode的所有子节点。newCh：新vnode的所有子节点。</span>
 	 <span class="token comment">// 通过下标，设置新旧vnode的前后两个元素，</span>
     <span class="token keyword">let</span> oldStartIdx <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> newStartIdx <span class="token operator">=</span> <span class="token number">0</span>
@@ -339,7 +339,7 @@
 
 <p>总结：    </p>
 <ul>
-<li><p><strong>调用patch</strong>：传入<code>新旧vnode</code>，调用<code>sameVnode</code>，返回<code>true</code>说明值得比较，则调用<code>patchVnode</code>，否则直接使用新节点替换旧节点  </p>
+<li><p><strong>调用patch</strong>：传入 <code>新旧vnode</code>，调用 <code>sameVnode</code>，返回 <code>true</code> 说明值得比较，则调用 <code>patchVnode</code>，否则直接使用新节点替换旧节点  </p>
 </li>
 <li><p><strong>调用patchVnode</strong>：更详细的对比新旧vnode，分几种情况：  </p>
 <ul>
@@ -349,7 +349,7 @@
 <li>4: 如果都有子节点，且不同，调用updateChildren，详细对比</li>
 </ul>
 </li>
-<li><p><strong>调用updateChildren</strong>： 从两边向中间收拢循环两个新旧vnode的每个子节点，以此对比，头头，尾尾，头尾，尾头。如果这四种比对调用sameVnode，得到true，证明值得对比，那么就调用第二步骤的<code>patchVnode</code>递归继续比，除了这四种情况。如果有key，则会对比key。否则直接替换新元素到真实dom。</p>
+<li><p><strong>调用updateChildren</strong>： 从两边向中间收拢循环两个新旧vnode的每个子节点，以此对比，头头，尾尾，头尾，尾头。如果这四种比对调用sameVnode，得到true，证明值得对比，那么就调用第二步骤的 <code>patchVnode</code> 递归继续比，除了这四种情况。如果有key，则会对比key。否则直接替换新元素到真实dom。</p>
 </li>
 </ul>
 
