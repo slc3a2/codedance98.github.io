@@ -221,7 +221,7 @@
 <p>由于近年来前端技术发展迅猛，越来越重视用户的操作体验，现在早已经不是那个 html、css、jQuery 一把梭的年代了。<br>越来越多的新思想、新框架孕育而生。这导致前端越来越重，需要 <strong>引入依赖</strong>、<strong>高级语法降级解析</strong>，<strong>Css预编译</strong>，<strong>使用更为严格的</strong><code>TypeScript</code><strong>避免问题</strong>， <strong>使用现代 mvvm 框架</strong><code>Vue</code>，<code>React</code><strong>快捷开发</strong>。最后 <strong>构建</strong> 成浏览器 <strong>可识别</strong> 的<code>.css</code> <code>.js</code>等基本文件再部署到生产环境，这其中构建一步就是<code>webpack</code>做的事情。 </p>
 <p><img src="/2020/09/24/webpack%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/EOzt1WTKBaXkgIr.png" alt="WechatIMG2925.png"></p>
 <h2 id="webpack基础使用"><a href="#webpack基础使用" class="headerlink" title="webpack基础使用"></a>webpack基础使用</h2><blockquote>
-<p>全局已安装 <a href="mailto:&#119;&#101;&#98;&#x70;&#97;&#x63;&#x6b;&#64;&#x34;&#x2e;&#x34;&#x34;&#46;&#x32;">&#119;&#101;&#98;&#x70;&#97;&#x63;&#x6b;&#64;&#x34;&#x2e;&#x34;&#x34;&#46;&#x32;</a> 和 <a href="mailto:&#x6e;&#x6f;&#x64;&#101;&#106;&#115;&#x40;&#49;&#x30;&#46;&#x31;&#51;&#x2e;&#48;">&#x6e;&#x6f;&#x64;&#101;&#106;&#115;&#x40;&#49;&#x30;&#46;&#x31;&#51;&#x2e;&#48;</a>  </p>
+<p>全局已安装 <a href="mailto:&#119;&#x65;&#98;&#x70;&#x61;&#99;&#107;&#x40;&#52;&#x2e;&#52;&#52;&#46;&#x32;">&#119;&#x65;&#98;&#x70;&#x61;&#99;&#107;&#x40;&#52;&#x2e;&#52;&#52;&#46;&#x32;</a> 和 <a href="mailto:&#110;&#x6f;&#100;&#101;&#106;&#115;&#x40;&#49;&#48;&#x2e;&#49;&#x33;&#46;&#48;">&#110;&#x6f;&#100;&#101;&#106;&#115;&#x40;&#49;&#48;&#x2e;&#49;&#x33;&#46;&#48;</a>  </p>
 </blockquote>
 <p>主要是两个配置：</p>
 <ul>
@@ -436,10 +436,11 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <p><code>plugins</code>为一个数组，每一项都是一个插件，插件的配置都是作为参数传入，有数组也有对象类型，<code>plugin</code>不像<code>loader</code>有很明确的顺序，它类似事件绑定，按需执行。</p>
 
 
-<p style="font-style:italic;">
+<p style="font-style: italic">
   <!-- <a class="classtest-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a>  -->
   <!-- 2020年9月24日 -->
-  被浏览 <span id="busuanzi_value_page_pv">-</span> 次 - 2020年9月24日
+  <a class="classtest-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a> · 2020年9月24日 · 被浏览
+  <span id="busuanzi_value_page_pv">-</span> 次
 </p>
 
 
@@ -447,41 +448,92 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 
           <div class="row mt-2">
   
-    <div class="eight columns">
-      <p id="madewith">Made with ❤ and
-        <a class="footer-link icon" href="https://hexo.io" target="_blank" style="text-decoration: none;" rel="noreferrer" aria-label="Hexo.io">
-        <svg class="hexo svg-hov" width="14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Hexo.js</title><path d="M12 .007L1.57 6.056V18.05L12 23.995l10.43-6.049V5.952L12 .007zm4.798 17.105l-.939.521-.939-.521V12.94H9.08v4.172l-.94.521-.938-.521V6.89l.939-.521.939.521v4.172h5.84V6.89l.94-.521.938.521v10.222z"/></svg>
-        </a>
-        
+  <div class="eight columns">
+    <p id="madewith">
+      Made with
+      <a
+        class="footer-link icon"
+        href="https://hexo.io"
+        target="_blank"
+        style="text-decoration: none"
+        rel="noreferrer"
+        aria-label="Hexo.io"
+      >
+        <svg
+          class="hexo svg-hov"
+          width="14"
+          role="img"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+        >
+          <title>Hexo.js</title>
+          <path
+            d="M12 .007L1.57 6.056V18.05L12 23.995l10.43-6.049V5.952L12 .007zm4.798 17.105l-.939.521-.939-.521V12.94H9.08v4.172l-.94.521-.938-.521V6.89l.939-.521.939.521v4.172h5.84V6.89l.94-.521.938.521v10.222z"
+          />
+        </svg>
+      </a>
+      <!-- 
         at <a href="https://en.wikipedia.org/wiki/Earth" target="_blank" rel="noreferrer">Earth</a>.</p>
-        
-        <!-- <p style="font-style:italic; font-size: 14px;">
+         -->
+      <!-- <p style="font-style:italic; font-size: 14px;">
           PV <span id="busuanzi_value_site_pv"></span>
           UV <span id="busuanzi_value_site_uv"></span>
         </p> -->
-    </div>
+    </p>
+  </div>
 
-    <!-- Sepcial thanks to https://simpleicons.org/ for the icons -->
-    <div class="four columns mb-3 posisi" >
-      
-      <a class="ml-0 footer-link icon" href="https://github.com/slc3a2" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="GitHub">
-        <svg class="github svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-      </a>
-      
-
-      
-
-      
-
-      
-
-      
-      <a class="ml-0 footer-link icon" href="https://leetcode.cn/u/slc3a2" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="StackOverflow">
-        <svg class="stackoverflow svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Stack Overflow</title><path d="M15.725 0l-1.72 1.277 6.39 8.588 1.716-1.277L15.725 0zm-3.94 3.418l-1.369 1.644 8.225 6.85 1.369-1.644-8.225-6.85zm-3.15 4.465l-.905 1.94 9.702 4.517.904-1.94-9.701-4.517zm-1.85 4.86l-.44 2.093 10.473 2.201.44-2.092-10.473-2.203zM1.89 15.47V24h19.19v-8.53h-2.133v6.397H4.021v-6.396H1.89zm4.265 2.133v2.13h10.66v-2.13H6.154Z"/></svg>
-      </a>
-      
-      <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    </div>
+  <!-- Sepcial thanks to https://simpleicons.org/ for the icons -->
+  <div class="four columns mb-3 posisi">
+    
+    <a
+      class="ml-0 footer-link icon"
+      href="https://github.com/slc3a2"
+      target="_blank"
+      style="text-decoration: none"
+      rel="noreferrer"
+      aria-label="GitHub"
+    >
+      <svg
+        class="github svg-hov"
+        width="18"
+        role="img"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <title>GitHub</title>
+        <path
+          d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+        />
+      </svg>
+    </a>
+        
+    <a
+      class="ml-0 footer-link icon"
+      href="https://leetcode.cn/u/slc3a2"
+      target="_blank"
+      style="text-decoration: none"
+      rel="noreferrer"
+      aria-label="StackOverflow"
+    >
+      <svg
+        class="stackoverflow svg-hov"
+        width="18"
+        role="img"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <title>Stack Overflow</title>
+        <path
+          d="M15.725 0l-1.72 1.277 6.39 8.588 1.716-1.277L15.725 0zm-3.94 3.418l-1.369 1.644 8.225 6.85 1.369-1.644-8.225-6.85zm-3.15 4.465l-.905 1.94 9.702 4.517.904-1.94-9.701-4.517zm-1.85 4.86l-.44 2.093 10.473 2.201.44-2.092-10.473-2.203zM1.89 15.47V24h19.19v-8.53h-2.133v6.397H4.021v-6.396H1.89zm4.265 2.133v2.13h10.66v-2.13H6.154Z"
+        />
+      </svg>
+    </a>
+    
+    <script
+      async
+      src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+    ></script>
+  </div>
   
 </div>
 

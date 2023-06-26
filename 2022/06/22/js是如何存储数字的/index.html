@@ -11,9 +11,9 @@
   <meta charset="utf-8">
 
   
-  <title>js 是如何存储数字的</title>
+  <title>js是如何存储数字的</title>
   
-  <link rel="canonical" href="https://slc3a2.github.io/2022/06/22/js%20%E6%98%AF%E5%A6%82%E4%BD%95%E5%AD%98%E5%82%A8%E6%95%B0%E5%AD%97%E7%9A%84/">
+  <link rel="canonical" href="https://slc3a2.github.io/2022/06/22/js%E6%98%AF%E5%A6%82%E4%BD%95%E5%AD%98%E5%82%A8%E6%95%B0%E5%AD%97%E7%9A%84/">
   
   <meta name="description" content="为什么要写这篇博客最近在和同事午饭的时候聊到这个问题。想到了刚接触编程时粗略了解过，但是又没办法讲清楚，所以决定利用这篇博客复习一下。也希望给相关的二进制存储的疑问画上一个句号。 先来了解存储数字的标准计算机是二进制的。浮点数是没有办法用二进制进行精确表示。我们的 CPU 表示浮点数由两个部分组成：">
   
@@ -24,21 +24,21 @@
   
   <meta property="og:site_name" content="slc3a2&#39;s blog" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="js 是如何存储数字的" />
+  <meta property="og:title" content="js是如何存储数字的" />
   
   <meta property="og:description" content="为什么要写这篇博客最近在和同事午饭的时候聊到这个问题。想到了刚接触编程时粗略了解过，但是又没办法讲清楚，所以决定利用这篇博客复习一下。也希望给相关的二进制存储的疑问画上一个句号。 先来了解存储数字的标准计算机是二进制的。浮点数是没有办法用二进制进行精确表示。我们的 CPU 表示浮点数由两个部分组成：">
   
-  <meta property="og:url" content="https://slc3a2.github.io/2022/06/22/js%20%E6%98%AF%E5%A6%82%E4%BD%95%E5%AD%98%E5%82%A8%E6%95%B0%E5%AD%97%E7%9A%84/" />
+  <meta property="og:url" content="https://slc3a2.github.io/2022/06/22/js%E6%98%AF%E5%A6%82%E4%BD%95%E5%AD%98%E5%82%A8%E6%95%B0%E5%AD%97%E7%9A%84/" />
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="js 是如何存储数字的">
+  <meta name="twitter:title" content="js是如何存储数字的">
   
   <meta name="twitter:description" content="为什么要写这篇博客最近在和同事午饭的时候聊到这个问题。想到了刚接触编程时粗略了解过，但是又没办法讲清楚，所以决定利用这篇博客复习一下。也希望给相关的二进制存储的疑问画上一个句号。 先来了解存储数字的标准计算机是二进制的。浮点数是没有办法用二进制进行精确表示。我们的 CPU 表示浮点数由两个部分组成：">
   
   
   <meta name="twitter:image" content="https://slc3a2.github.ioundefined">
   
-  <meta name="twitter:url" content="https://slc3a2.github.io/2022/06/22/js%20%E6%98%AF%E5%A6%82%E4%BD%95%E5%AD%98%E5%82%A8%E6%95%B0%E5%AD%97%E7%9A%84/" />
+  <meta name="twitter:url" content="https://slc3a2.github.io/2022/06/22/js%E6%98%AF%E5%A6%82%E4%BD%95%E5%AD%98%E5%82%A8%E6%95%B0%E5%AD%97%E7%9A%84/" />
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -194,7 +194,7 @@
 </div>
 
         <div class="trans">
-          <h1>js 是如何存储数字的</h1>
+          <h1>js是如何存储数字的</h1>
 
  
 <script type="text/x-mathjax-config">
@@ -248,14 +248,18 @@
 <ul>
 <li>符号位存入 <code> 0</code>，因为 <code> 1000.01</code> 是正数</li>
 <li>指数位存入 1026 的二进制 <code> 10000000010</code>，指数应该是 <code>3</code>，为什么存入 <code> 1026</code> ? 参考下面标题为 <em>为什么指数位要设置偏移量 ?</em></li>
-<li> 尾数位存入 <code> 00001</code>，把 <code>1.0001</code> 小数点前的 <code>1</code> 省略，因为转换为二进制位后，只可能是 0 和 1，再进行二进制科学记数法，第一位一定大于 0，所以又排除了 0，所以小数点前的数只能是 1，就可以省略掉</li>
+<li>尾数位存入 <code> 00001</code>，把 <code>1.0001</code> 小数点前的 <code>1</code> 省略，因为转换为二进制位后，只可能是 0 和 1，再进行二进制科学记数法，第一位一定大于 0，所以又排除了 0，所以小数点前的数只能是 1，就可以省略掉</li>
 </ul>
-<p>至此使用双精度浮点法 <code>8.25</code> 存储的结果为：<br><img src="/2022/06/22/js%20%E6%98%AF%E5%A6%82%E4%BD%95%E5%AD%98%E5%82%A8%E6%95%B0%E5%AD%97%E7%9A%84/f57192d6-0ec2-4ae9-af18-5c8393ad2ee1.png" alt="8.25 double 64 expamle"></p>
+<p>至此使用双精度浮点法 <code>8.25</code> 存储的结果为：<br><img src="/2022/06/22/js%E6%98%AF%E5%A6%82%E4%BD%95%E5%AD%98%E5%82%A8%E6%95%B0%E5%AD%97%E7%9A%84/f57192d6-0ec2-4ae9-af18-5c8393ad2ee1.png" alt="8.25 double 64 expamle"></p>
 <h2 id="为什么指数位要设置偏移量"><a href="#为什么指数位要设置偏移量" class="headerlink" title="为什么指数位要设置偏移量 ?"></a>为什么指数位要设置偏移量 ?</h2><p>这里需要解释下，按照上面的例子，指数应该是 <code>3</code>，为什么存入 <code> 1026</code> ?</p>
 <p>是因为指数位有 <code>11</code> 位，可以表示 <code> 0 ~ 2^11</code>，也就是 <code> 0 ~ 2048</code>， 因为指数可能 <strong>正</strong> 或 <strong>负</strong> 的，这种情况下计算机不仅仅要识别指数有多大，还需要识别是正是否，无疑增加了复杂度。</p>
-<p>为了简化这个问题，指数位只存储无符号整数，所以使用了偏移量的概念，因为指数有正负， <code>0 ~ 2048</code> 没办法表示负数，就把 <code>0 ~ 2048</code> 从中一刀切开，范围变成 <code>-1024</code> 到 <code>+1024</code>， 对了，其中还包括 <code>0</code> ，就是 <code>-1024</code> 到 <code>+1023</code> 。存储的时候让原本的指数不管正负都加上<code>1024 </code>的偏移量，可以保证，存储的都是整数，当二进制转回十进制的时候，再减去 1024 就可以了，那 1024 + 3 应该是 1027 啊，为什么实际用了 1026 呢，因为人们为了特殊用处，不允许使用 <code>0</code> 和  <code>1023</code> 这两个数字表示指数，因为这两个极值，来表示一些特别的含义，比如NaN，Infinity，0等。这样的话少了 2 个数字，偏移量的设置自然就只好采用最大值 <code>1023</code> 了。因为<code>-1023 + 1023 = 0</code>，最小的指数为<code>0</code>，所以指数位 <code> 3 + 1023</code>  为 <code> 1026</code> 。</p>
-<h2 id="从内存中如何取出使用呢？"><a href="#从内存中如何取出使用呢？" class="headerlink" title="从内存中如何取出使用呢？"></a>从内存中如何取出使用呢？</h2><p>按照 <strong>双精度浮点法</strong> 存入内存的数字如何拿出来使用呢？先看转换公式：<br>$$<br>(-1)^{sign} \times 2^{exponent}  \times  (1 + mantissa)<br>$$</p>
-<p>还是用 <code> 8.25</code> 举例，符号位为 <code>0</code>，指数位为 1026 - 1023 (偏移量) = 3，尾数为 <code>00001</code>，可得：<br>$$<br>(-1)^{0} \times 2^{3}  \times  (1 + 0.00001) = 1   \times  1000.01<br>$$<br>把二进制结果 <code>1000.01</code> 转换为十进制，先把小数位按照<strong>第 1 位的值*2^(-1)<strong>，</strong>第 2 位的值*2^(-2)<strong>，</strong>第3位的值*2^(-3)</strong>  …到最后一项 **第n位的值*2^(-n)**，然后把最后结果相加，因为 <code>1000.01</code> 只有两位小数位 <code>.01</code>，按照下面方法计算可得 <code>0.25</code>：<br>$$<br>0 \times 2^{-1} + 1 \times 2^{-2}   = 0.25<br>$$</p>
+<p>为了简化这个问题，指数位只存储无符号整数，所以使用了偏移量的概念，因为指数有正负， <code>0 ~ 2048</code> 没办法表示负数，就把 <code>0 ~ 2048</code> 从中一刀切开，范围变成 <code>-1024</code> 到 <code>+1024</code>， 对了，其中还包括 <code>0</code> ，就是 <code>-1024</code> 到 <code>+1023</code> 。存储的时候让原本的指数不管正负都加上<code>1024 </code>的偏移量，可以保证，存储的都是整数，当二进制转回十进制的时候，再减去 1024 就可以了，那 1024 + 3 应该是 1027 啊，为什么实际用了 1026 呢，因为人们为了特殊用处，不允许使用 <code>0</code> 和 <code>1023</code> 这两个数字表示指数，因为这两个极值，来表示一些特别的含义，比如 NaN，Infinity，0 等。这样的话少了 2 个数字，偏移量的设置自然就只好采用最大值 <code>1023</code> 了。因为<code>-1023 + 1023 = 0</code>，最小的指数为<code>0</code>，所以指数位 <code> 3 + 1023</code> 为 <code> 1026</code> 。</p>
+<h2 id="从内存中如何取出使用呢？"><a href="#从内存中如何取出使用呢？" class="headerlink" title="从内存中如何取出使用呢？"></a>从内存中如何取出使用呢？</h2><p>按照 <strong>双精度浮点法</strong> 存入内存的数字如何拿出来使用呢？先看转换公式：</p>
+<p>$$<br>(-1)^{sign} \times 2^{exponent}  \times  (1 + mantissa)<br>$$</p>
+<p>还是用 <code> 8.25</code> 举例，符号位为 <code>0</code>，指数位为 1026 - 1023 (偏移量) = 3，尾数为 <code>00001</code>，可得：</p>
+<p>$$<br>(-1)^{0} \times 2^{3}  \times  (1 + 0.00001) = 1   \times  1000.01<br>$$</p>
+<p>把二进制结果 <code>1000.01</code> 转换为十进制，先把小数位按照<strong>第 1 位的值*2^(-1)<strong>，</strong>第 2 位的值*2^(-2)<strong>，</strong>第 3 位的值*2^(-3)</strong> …到最后一项 **第 n 位的值*2^(-n)**，然后把最后结果相加，因为 <code>1000.01</code> 只有两位小数位 <code>.01</code>，按照下面方法计算可得 <code>0.25</code>：</p>
+<p>$$<br>0 \times 2^{-1} + 1 \times 2^{-2}   = 0.25<br>$$</p>
 <p>整数位 1000 转十进制，和小数位计算方式一样，只是指数从负数换成整数就好了，最终结果是 <code>8</code>，把 <strong>小数位</strong> 和 **整数位 **结果加到一起就是最终结果了 <code>8.25</code> 了</p>
 <p>$$<br>0 \times 2^{1} + 0 \times 2^{2} + 0 \times 2^{3} + 1 \times 2^{4}  = 8<br>$$</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><code>js</code> 中数字存入内存的步骤：</p>
@@ -270,20 +274,21 @@
 <li>得到的结果转十进制</li>
 </ul>
 <h2 id="扩展为什么-0-1-0-2-0-3"><a href="#扩展为什么-0-1-0-2-0-3" class="headerlink" title="扩展为什么 0.1 + 0.2 !== 0.3"></a>扩展为什么 0.1 + 0.2 !== 0.3</h2><p>从上文我们知道了一个数是如何存储的，那我们按照上面的方式模拟一下 0.1 + 0.2 的过程：</p>
-<p>0.1转换为二进制为 0.0001100110011(0011循环)，因为尾数只能存储52位，没办法，就把52位以后截取掉了，实际存入结果为：</p>
-<p><img src="/2022/06/22/js%20%E6%98%AF%E5%A6%82%E4%BD%95%E5%AD%98%E5%82%A8%E6%95%B0%E5%AD%97%E7%9A%84/image-20220623220709116.png" alt="demo1 png"></p>
-<p>0.2同理，也是循环二进制，存储结果为：</p>
-<p><img src="/2022/06/22/js%20%E6%98%AF%E5%A6%82%E4%BD%95%E5%AD%98%E5%82%A8%E6%95%B0%E5%AD%97%E7%9A%84/image-20220623221005089.png" alt="demo2 png"></p>
+<p>0.1 转换为二进制为 0.0001100110011(0011 循环)，因为尾数只能存储 52 位，没办法，就把 52 位以后截取掉了，实际存入结果为：</p>
+<p><img src="/2022/06/22/js%E6%98%AF%E5%A6%82%E4%BD%95%E5%AD%98%E5%82%A8%E6%95%B0%E5%AD%97%E7%9A%84/image-20220623220709116.png" alt="demo1 png"></p>
+<p>0.2 同理，也是循环二进制，存储结果为：</p>
+<p><img src="/2022/06/22/js%E6%98%AF%E5%A6%82%E4%BD%95%E5%AD%98%E5%82%A8%E6%95%B0%E5%AD%97%E7%9A%84/image-20220623221005089.png" alt="demo2 png"></p>
 <p>按照上面的方法分别转回十进制可得：</p>
 <p><strong>0.1 为 0.100000001490116119384765625</strong></p>
 <p><strong>0.2 为 0.20000000298023223876953125</strong></p>
 <p>相加结果为 <code>0.30000000447034836</code>，原因就是在二进制中都只能精准表示 2 除尽的数字 1/2, 1/4, 1/8，当无法精准表示时，会舍弃存储。就好比，十进制的世界中，1/3，是 0.33333… 是无限循环的，如果人的理解也像计算机一样，是按照固定长度去表示的话，那是无法精准表示的一样。</p>
 
 
-<p style="font-style:italic;">
-  <!-- <a class="classtest-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a>  -->
+<p style="font-style: italic">
+  <!-- <a class="classtest-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%BA%95%E5%B1%82/" rel="tag">计算机底层</a>  -->
   <!-- 2022年6月22日 -->
-  被浏览 <span id="busuanzi_value_page_pv">-</span> 次 - 2022年6月22日
+  <a class="classtest-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%BA%95%E5%B1%82/" rel="tag">计算机底层</a> · 2022年6月22日 · 被浏览
+  <span id="busuanzi_value_page_pv">-</span> 次
 </p>
 
 
@@ -291,41 +296,92 @@
 
           <div class="row mt-2">
   
-    <div class="eight columns">
-      <p id="madewith">Made with ❤ and
-        <a class="footer-link icon" href="https://hexo.io" target="_blank" style="text-decoration: none;" rel="noreferrer" aria-label="Hexo.io">
-        <svg class="hexo svg-hov" width="14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Hexo.js</title><path d="M12 .007L1.57 6.056V18.05L12 23.995l10.43-6.049V5.952L12 .007zm4.798 17.105l-.939.521-.939-.521V12.94H9.08v4.172l-.94.521-.938-.521V6.89l.939-.521.939.521v4.172h5.84V6.89l.94-.521.938.521v10.222z"/></svg>
-        </a>
-        
+  <div class="eight columns">
+    <p id="madewith">
+      Made with
+      <a
+        class="footer-link icon"
+        href="https://hexo.io"
+        target="_blank"
+        style="text-decoration: none"
+        rel="noreferrer"
+        aria-label="Hexo.io"
+      >
+        <svg
+          class="hexo svg-hov"
+          width="14"
+          role="img"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+        >
+          <title>Hexo.js</title>
+          <path
+            d="M12 .007L1.57 6.056V18.05L12 23.995l10.43-6.049V5.952L12 .007zm4.798 17.105l-.939.521-.939-.521V12.94H9.08v4.172l-.94.521-.938-.521V6.89l.939-.521.939.521v4.172h5.84V6.89l.94-.521.938.521v10.222z"
+          />
+        </svg>
+      </a>
+      <!-- 
         at <a href="https://en.wikipedia.org/wiki/Earth" target="_blank" rel="noreferrer">Earth</a>.</p>
-        
-        <!-- <p style="font-style:italic; font-size: 14px;">
+         -->
+      <!-- <p style="font-style:italic; font-size: 14px;">
           PV <span id="busuanzi_value_site_pv"></span>
           UV <span id="busuanzi_value_site_uv"></span>
         </p> -->
-    </div>
+    </p>
+  </div>
 
-    <!-- Sepcial thanks to https://simpleicons.org/ for the icons -->
-    <div class="four columns mb-3 posisi" >
-      
-      <a class="ml-0 footer-link icon" href="https://github.com/slc3a2" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="GitHub">
-        <svg class="github svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-      </a>
-      
-
-      
-
-      
-
-      
-
-      
-      <a class="ml-0 footer-link icon" href="https://leetcode.cn/u/slc3a2" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="StackOverflow">
-        <svg class="stackoverflow svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Stack Overflow</title><path d="M15.725 0l-1.72 1.277 6.39 8.588 1.716-1.277L15.725 0zm-3.94 3.418l-1.369 1.644 8.225 6.85 1.369-1.644-8.225-6.85zm-3.15 4.465l-.905 1.94 9.702 4.517.904-1.94-9.701-4.517zm-1.85 4.86l-.44 2.093 10.473 2.201.44-2.092-10.473-2.203zM1.89 15.47V24h19.19v-8.53h-2.133v6.397H4.021v-6.396H1.89zm4.265 2.133v2.13h10.66v-2.13H6.154Z"/></svg>
-      </a>
-      
-      <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    </div>
+  <!-- Sepcial thanks to https://simpleicons.org/ for the icons -->
+  <div class="four columns mb-3 posisi">
+    
+    <a
+      class="ml-0 footer-link icon"
+      href="https://github.com/slc3a2"
+      target="_blank"
+      style="text-decoration: none"
+      rel="noreferrer"
+      aria-label="GitHub"
+    >
+      <svg
+        class="github svg-hov"
+        width="18"
+        role="img"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <title>GitHub</title>
+        <path
+          d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+        />
+      </svg>
+    </a>
+        
+    <a
+      class="ml-0 footer-link icon"
+      href="https://leetcode.cn/u/slc3a2"
+      target="_blank"
+      style="text-decoration: none"
+      rel="noreferrer"
+      aria-label="StackOverflow"
+    >
+      <svg
+        class="stackoverflow svg-hov"
+        width="18"
+        role="img"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <title>Stack Overflow</title>
+        <path
+          d="M15.725 0l-1.72 1.277 6.39 8.588 1.716-1.277L15.725 0zm-3.94 3.418l-1.369 1.644 8.225 6.85 1.369-1.644-8.225-6.85zm-3.15 4.465l-.905 1.94 9.702 4.517.904-1.94-9.701-4.517zm-1.85 4.86l-.44 2.093 10.473 2.201.44-2.092-10.473-2.203zM1.89 15.47V24h19.19v-8.53h-2.133v6.397H4.021v-6.396H1.89zm4.265 2.133v2.13h10.66v-2.13H6.154Z"
+        />
+      </svg>
+    </a>
+    
+    <script
+      async
+      src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+    ></script>
+  </div>
   
 </div>
 

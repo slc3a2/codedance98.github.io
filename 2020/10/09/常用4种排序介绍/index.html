@@ -11,9 +11,9 @@
   <meta charset="utf-8">
 
   
-  <title>js常用4种排序介绍</title>
+  <title>常用4种排序介绍</title>
   
-  <link rel="canonical" href="https://slc3a2.github.io/2020/10/09/js%E5%B8%B8%E7%94%A84%E7%A7%8D%E6%8E%92%E5%BA%8F%E4%BB%8B%E7%BB%8D/">
+  <link rel="canonical" href="https://slc3a2.github.io/2020/10/09/%E5%B8%B8%E7%94%A84%E7%A7%8D%E6%8E%92%E5%BA%8F%E4%BB%8B%E7%BB%8D/">
   
   <meta name="description" content="冒泡排序（Bubble sort）原理和演示： 依次比较数组中相邻的每一对值，如果前面的值 大于 后面的值，则交换他们俩的位置。如果数组中5个数字(length 为 5)，由于比较 两个一组 的数字，那么只需要4次(length - 1)比较，就可以实现把数组中最大的一个数放到最后。  functi">
   
@@ -24,21 +24,21 @@
   
   <meta property="og:site_name" content="slc3a2&#39;s blog" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="js常用4种排序介绍" />
+  <meta property="og:title" content="常用4种排序介绍" />
   
   <meta property="og:description" content="冒泡排序（Bubble sort）原理和演示： 依次比较数组中相邻的每一对值，如果前面的值 大于 后面的值，则交换他们俩的位置。如果数组中5个数字(length 为 5)，由于比较 两个一组 的数字，那么只需要4次(length - 1)比较，就可以实现把数组中最大的一个数放到最后。  functi">
   
-  <meta property="og:url" content="https://slc3a2.github.io/2020/10/09/js%E5%B8%B8%E7%94%A84%E7%A7%8D%E6%8E%92%E5%BA%8F%E4%BB%8B%E7%BB%8D/" />
+  <meta property="og:url" content="https://slc3a2.github.io/2020/10/09/%E5%B8%B8%E7%94%A84%E7%A7%8D%E6%8E%92%E5%BA%8F%E4%BB%8B%E7%BB%8D/" />
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="js常用4种排序介绍">
+  <meta name="twitter:title" content="常用4种排序介绍">
   
   <meta name="twitter:description" content="冒泡排序（Bubble sort）原理和演示： 依次比较数组中相邻的每一对值，如果前面的值 大于 后面的值，则交换他们俩的位置。如果数组中5个数字(length 为 5)，由于比较 两个一组 的数字，那么只需要4次(length - 1)比较，就可以实现把数组中最大的一个数放到最后。  functi">
   
   
   <meta name="twitter:image" content="https://slc3a2.github.ioundefined">
   
-  <meta name="twitter:url" content="https://slc3a2.github.io/2020/10/09/js%E5%B8%B8%E7%94%A84%E7%A7%8D%E6%8E%92%E5%BA%8F%E4%BB%8B%E7%BB%8D/" />
+  <meta name="twitter:url" content="https://slc3a2.github.io/2020/10/09/%E5%B8%B8%E7%94%A84%E7%A7%8D%E6%8E%92%E5%BA%8F%E4%BB%8B%E7%BB%8D/" />
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -194,7 +194,7 @@
 </div>
 
         <div class="trans">
-          <h1>js常用4种排序介绍</h1>
+          <h1>常用4种排序介绍</h1>
 
  
 <script type="text/x-mathjax-config">
@@ -269,7 +269,7 @@ function bubbleSort(arr) &#123;
   return arr;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="冒泡排序动画演示："><a href="#冒泡排序动画演示：" class="headerlink" title="冒泡排序动画演示："></a>冒泡排序动画演示：</h4><p><img src="/2020/10/09/js%E5%B8%B8%E7%94%A84%E7%A7%8D%E6%8E%92%E5%BA%8F%E4%BB%8B%E7%BB%8D/KWrN6slZTEFAuhv.gif" alt="bubble sort.gif"></p>
+<h4 id="冒泡排序动画演示："><a href="#冒泡排序动画演示：" class="headerlink" title="冒泡排序动画演示："></a>冒泡排序动画演示：</h4><p><img src="/2020/10/09/%E5%B8%B8%E7%94%A84%E7%A7%8D%E6%8E%92%E5%BA%8F%E4%BB%8B%E7%BB%8D/KWrN6slZTEFAuhv.gif" alt="bubble sort.gif"></p>
 <h2 id="选择排序（Selection-Sort）"><a href="#选择排序（Selection-Sort）" class="headerlink" title="选择排序（Selection Sort）"></a>选择排序（Selection Sort）</h2><h4 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h4><ul>
 <li>循环整个数组，找到<strong>最小</strong>的值，放在数组<strong>第一位</strong>(和第一位交换位置）。</li>
 <li>从数组<strong>第二位</strong>开始重新循环，依旧找到<strong>最小</strong>的值，放在数组第二位，重复此步骤，直到对比完最后一组数据。</li>
@@ -290,7 +290,7 @@ function bubbleSort(arr) &#123;
   <span class="token keyword">return</span> arr<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="选择排序动画演示："><a href="#选择排序动画演示：" class="headerlink" title="选择排序动画演示："></a>选择排序动画演示：</h4><p><img src="/2020/10/09/js%E5%B8%B8%E7%94%A84%E7%A7%8D%E6%8E%92%E5%BA%8F%E4%BB%8B%E7%BB%8D/ibLoIgDEnRJrUas.gif" alt="section sort.gif"></p>
+<h4 id="选择排序动画演示："><a href="#选择排序动画演示：" class="headerlink" title="选择排序动画演示："></a>选择排序动画演示：</h4><p><img src="/2020/10/09/%E5%B8%B8%E7%94%A84%E7%A7%8D%E6%8E%92%E5%BA%8F%E4%BB%8B%E7%BB%8D/ibLoIgDEnRJrUas.gif" alt="section sort.gif"></p>
 <h2 id="插入排序（Insertion-Sort）"><a href="#插入排序（Insertion-Sort）" class="headerlink" title="插入排序（Insertion Sort）"></a>插入排序（Insertion Sort）</h2><h4 id="原理：-1"><a href="#原理：-1" class="headerlink" title="原理："></a>原理：</h4><ul>
 <li>将数组分成<strong>两部分</strong>，一部分为<strong>已排序</strong>(默认为数组第一个元素且只有这一个元素)，另一部分为<strong>未排序</strong>。</li>
 <li>依次从未排序数组中取值，和已排序中的值<strong>依次做对</strong>比，如果<strong>未排序元素</strong>比<strong>已排序元素</strong>中某个元素<strong>小</strong>，那就将<strong>已排序元素</strong>向<strong>后移</strong>一位，使他本来位置变成一个<strong>空位</strong>，再将<strong>待排序数据</strong>插入空位。</li>
@@ -314,7 +314,7 @@ function bubbleSort(arr) &#123;
   <span class="token keyword">return</span> arr<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="插入排序动画演示："><a href="#插入排序动画演示：" class="headerlink" title="插入排序动画演示："></a>插入排序动画演示：</h4><p><img src="/2020/10/09/js%E5%B8%B8%E7%94%A84%E7%A7%8D%E6%8E%92%E5%BA%8F%E4%BB%8B%E7%BB%8D/5z82iWpVIJbLfu7.gif" alt="insertion sort.gif"></p>
+<h4 id="插入排序动画演示："><a href="#插入排序动画演示：" class="headerlink" title="插入排序动画演示："></a>插入排序动画演示：</h4><p><img src="/2020/10/09/%E5%B8%B8%E7%94%A84%E7%A7%8D%E6%8E%92%E5%BA%8F%E4%BB%8B%E7%BB%8D/5z82iWpVIJbLfu7.gif" alt="insertion sort.gif"></p>
 <h2 id="快速排序（Quick-Sort）"><a href="#快速排序（Quick-Sort）" class="headerlink" title="快速排序（Quick Sort）"></a>快速排序（Quick Sort）</h2><h4 id="原理：-2"><a href="#原理：-2" class="headerlink" title="原理："></a>原理：</h4><ul>
 <li>选择数组中的一个元素作为<strong>基准值</strong>，用两个新数组<strong>分别存储</strong>原数组比基准值<strong>大</strong>的值，和<strong>小</strong>的值。</li>
 <li>继续<strong>递归处理</strong>这两个新数组，最终用 concat 合并到一起，效果为：比基准值小的数组+基准值+比基准值小的数组。</li>
@@ -342,7 +342,7 @@ function bubbleSort(arr) &#123;
   <span class="token keyword">return</span> <span class="token function">quickSort</span><span class="token punctuation">(</span>left<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>point<span class="token punctuation">,</span> <span class="token function">quickSort</span><span class="token punctuation">(</span>right<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="快速排序动画演示："><a href="#快速排序动画演示：" class="headerlink" title="快速排序动画演示："></a>快速排序动画演示：</h4><p><img src="/2020/10/09/js%E5%B8%B8%E7%94%A84%E7%A7%8D%E6%8E%92%E5%BA%8F%E4%BB%8B%E7%BB%8D/DzWckAlLmVU9JuN.gif" alt="quick sort.gif"></p>
+<h4 id="快速排序动画演示："><a href="#快速排序动画演示：" class="headerlink" title="快速排序动画演示："></a>快速排序动画演示：</h4><p><img src="/2020/10/09/%E5%B8%B8%E7%94%A84%E7%A7%8D%E6%8E%92%E5%BA%8F%E4%BB%8B%E7%BB%8D/DzWckAlLmVU9JuN.gif" alt="quick sort.gif"></p>
 <hr>
 
 <p>另外说一下，js 的原生提供的 <code>sort</code> 排序方法原理：如果数组长度<code>小于10</code>，使用插入排序，否则使用快速排序。如其名，快速排序的性能还是很好的。</p>
@@ -351,10 +351,11 @@ function bubbleSort(arr) &#123;
 <p>本文动画参考：<a target="_blank" rel="noopener" href="https://juejin.im/post/6844903444365443080">掘金</a><br>本文例子查看：<a target="_blank" rel="noopener" href="https://github.com/slc3a2/docs/tree/main/javascript_sort">GitHub</a></p>
 
 
-<p style="font-style:italic;">
-  <!-- <a class="classtest-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a>  -->
+<p style="font-style: italic">
+  <!-- <a class="classtest-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a>  -->
   <!-- 2020年10月9日 -->
-  被浏览 <span id="busuanzi_value_page_pv">-</span> 次 - 2020年10月9日
+  <a class="classtest-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a> · 2020年10月9日 · 被浏览
+  <span id="busuanzi_value_page_pv">-</span> 次
 </p>
 
 
@@ -362,41 +363,92 @@ function bubbleSort(arr) &#123;
 
           <div class="row mt-2">
   
-    <div class="eight columns">
-      <p id="madewith">Made with ❤ and
-        <a class="footer-link icon" href="https://hexo.io" target="_blank" style="text-decoration: none;" rel="noreferrer" aria-label="Hexo.io">
-        <svg class="hexo svg-hov" width="14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Hexo.js</title><path d="M12 .007L1.57 6.056V18.05L12 23.995l10.43-6.049V5.952L12 .007zm4.798 17.105l-.939.521-.939-.521V12.94H9.08v4.172l-.94.521-.938-.521V6.89l.939-.521.939.521v4.172h5.84V6.89l.94-.521.938.521v10.222z"/></svg>
-        </a>
-        
+  <div class="eight columns">
+    <p id="madewith">
+      Made with
+      <a
+        class="footer-link icon"
+        href="https://hexo.io"
+        target="_blank"
+        style="text-decoration: none"
+        rel="noreferrer"
+        aria-label="Hexo.io"
+      >
+        <svg
+          class="hexo svg-hov"
+          width="14"
+          role="img"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+        >
+          <title>Hexo.js</title>
+          <path
+            d="M12 .007L1.57 6.056V18.05L12 23.995l10.43-6.049V5.952L12 .007zm4.798 17.105l-.939.521-.939-.521V12.94H9.08v4.172l-.94.521-.938-.521V6.89l.939-.521.939.521v4.172h5.84V6.89l.94-.521.938.521v10.222z"
+          />
+        </svg>
+      </a>
+      <!-- 
         at <a href="https://en.wikipedia.org/wiki/Earth" target="_blank" rel="noreferrer">Earth</a>.</p>
-        
-        <!-- <p style="font-style:italic; font-size: 14px;">
+         -->
+      <!-- <p style="font-style:italic; font-size: 14px;">
           PV <span id="busuanzi_value_site_pv"></span>
           UV <span id="busuanzi_value_site_uv"></span>
         </p> -->
-    </div>
+    </p>
+  </div>
 
-    <!-- Sepcial thanks to https://simpleicons.org/ for the icons -->
-    <div class="four columns mb-3 posisi" >
-      
-      <a class="ml-0 footer-link icon" href="https://github.com/slc3a2" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="GitHub">
-        <svg class="github svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-      </a>
-      
-
-      
-
-      
-
-      
-
-      
-      <a class="ml-0 footer-link icon" href="https://leetcode.cn/u/slc3a2" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="StackOverflow">
-        <svg class="stackoverflow svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Stack Overflow</title><path d="M15.725 0l-1.72 1.277 6.39 8.588 1.716-1.277L15.725 0zm-3.94 3.418l-1.369 1.644 8.225 6.85 1.369-1.644-8.225-6.85zm-3.15 4.465l-.905 1.94 9.702 4.517.904-1.94-9.701-4.517zm-1.85 4.86l-.44 2.093 10.473 2.201.44-2.092-10.473-2.203zM1.89 15.47V24h19.19v-8.53h-2.133v6.397H4.021v-6.396H1.89zm4.265 2.133v2.13h10.66v-2.13H6.154Z"/></svg>
-      </a>
-      
-      <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    </div>
+  <!-- Sepcial thanks to https://simpleicons.org/ for the icons -->
+  <div class="four columns mb-3 posisi">
+    
+    <a
+      class="ml-0 footer-link icon"
+      href="https://github.com/slc3a2"
+      target="_blank"
+      style="text-decoration: none"
+      rel="noreferrer"
+      aria-label="GitHub"
+    >
+      <svg
+        class="github svg-hov"
+        width="18"
+        role="img"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <title>GitHub</title>
+        <path
+          d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+        />
+      </svg>
+    </a>
+        
+    <a
+      class="ml-0 footer-link icon"
+      href="https://leetcode.cn/u/slc3a2"
+      target="_blank"
+      style="text-decoration: none"
+      rel="noreferrer"
+      aria-label="StackOverflow"
+    >
+      <svg
+        class="stackoverflow svg-hov"
+        width="18"
+        role="img"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <title>Stack Overflow</title>
+        <path
+          d="M15.725 0l-1.72 1.277 6.39 8.588 1.716-1.277L15.725 0zm-3.94 3.418l-1.369 1.644 8.225 6.85 1.369-1.644-8.225-6.85zm-3.15 4.465l-.905 1.94 9.702 4.517.904-1.94-9.701-4.517zm-1.85 4.86l-.44 2.093 10.473 2.201.44-2.092-10.473-2.203zM1.89 15.47V24h19.19v-8.53h-2.133v6.397H4.021v-6.396H1.89zm4.265 2.133v2.13h10.66v-2.13H6.154Z"
+        />
+      </svg>
+    </a>
+    
+    <script
+      async
+      src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+    ></script>
+  </div>
   
 </div>
 
