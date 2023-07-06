@@ -244,37 +244,33 @@
   <span class="token punctuation">&#125;</span>
   <span class="token keyword">return</span> arr<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>两个变量互换值可以使用<code>es6</code>的解构语法，省去使用<code>temp</code>缓存，语法为<code>[a, b] = [b, a]</code>，即可交换<code>变量a</code>和<code>变量b</code>的值。复杂数据类型<code>Object</code>和<code>Array</code>都适用；如果第二个循环中的大小判断，一次都没有执行，说明当前这组数据是正序无需排序，用一个变量<code>isOk</code>标记下配合<code>break</code>，实现方法优化。</p>
+</li>
 </ul>
-<pre class="line-numbers language-none"><code class="language-none">
-- 两个变量互换值可以使用&#96;es6&#96;的解构语法，省去使用&#96;temp&#96;缓存，语法为&#96;[a, b] &#x3D; [b, a]&#96;，即可交换&#96;变量a&#96;和&#96;变量b&#96;的值。复杂数据类型&#96;Object&#96;和&#96;Array&#96;都适用；如果第二个循环中的大小判断，一次都没有执行，说明当前这组数据是正序无需排序，用一个变量&#96;isOk&#96;标记下配合&#96;break&#96;，实现方法优化。
-
-#### 完整代码：
-
-&#96;&#96;&#96;javascript
-function bubbleSort(arr) &#123;
-  console.time(&#39;耗时&#39;);
-  for (let j &#x3D; 0; j &lt; arr.length - 1; j++) &#123;
-    let isOk &#x3D; true;
-    for (let i &#x3D; 0; i &lt; arr.length - 1 - j; i++) &#123;
-      if (arr[i] &gt; arr[i+1]) &#123;
-        [arr[i], arr[i+1]] &#x3D; [arr[i+1], arr[i]];
-        isOk &#x3D; false;
-      &#125;
-    &#125;
-    if (isOk) &#123;
-      break;
-    &#125;
-  &#125;
-  console.timeEnd(&#39;耗时&#39;);
-  return arr;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="完整代码："><a href="#完整代码：" class="headerlink" title="完整代码："></a>完整代码：</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">bubbleSort</span><span class="token punctuation">(</span><span class="token parameter">arr</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'耗时'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> arr<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">let</span> isOk <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> arr<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span> <span class="token operator">-</span> j<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">></span> arr<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token punctuation">[</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> arr<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>arr<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        isOk <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>isOk<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">break</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+  console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'耗时'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> arr<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h4 id="冒泡排序动画演示："><a href="#冒泡排序动画演示：" class="headerlink" title="冒泡排序动画演示："></a>冒泡排序动画演示：</h4><p><img src="/2020/10/09/%E5%B8%B8%E7%94%A84%E7%A7%8D%E6%8E%92%E5%BA%8F%E4%BB%8B%E7%BB%8D/KWrN6slZTEFAuhv.gif" alt="bubble sort.gif"></p>
 <h2 id="选择排序（Selection-Sort）"><a href="#选择排序（Selection-Sort）" class="headerlink" title="选择排序（Selection Sort）"></a>选择排序（Selection Sort）</h2><h4 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h4><ul>
 <li>循环整个数组，找到<strong>最小</strong>的值，放在数组<strong>第一位</strong>(和第一位交换位置）。</li>
 <li>从数组<strong>第二位</strong>开始重新循环，依旧找到<strong>最小</strong>的值，放在数组第二位，重复此步骤，直到对比完最后一组数据。</li>
 </ul>
-<h4 id="完整代码："><a href="#完整代码：" class="headerlink" title="完整代码："></a>完整代码：</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">selectionSort</span><span class="token punctuation">(</span><span class="token parameter">arr</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<h4 id="完整代码：-1"><a href="#完整代码：-1" class="headerlink" title="完整代码："></a>完整代码：</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">selectionSort</span><span class="token punctuation">(</span><span class="token parameter">arr</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> arr<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     <span class="token comment">// arr.length - 1是因为假定数组中n个数，比较需要两个数，所以只需要比较n-1次</span>
     <span class="token keyword">let</span> minIndex <span class="token operator">=</span> i<span class="token punctuation">;</span> <span class="token comment">// 记录每次循环开始位置，等待和最小值交换位置</span>
@@ -295,7 +291,7 @@ function bubbleSort(arr) &#123;
 <li>将数组分成<strong>两部分</strong>，一部分为<strong>已排序</strong>(默认为数组第一个元素且只有这一个元素)，另一部分为<strong>未排序</strong>。</li>
 <li>依次从未排序数组中取值，和已排序中的值<strong>依次做对</strong>比，如果<strong>未排序元素</strong>比<strong>已排序元素</strong>中某个元素<strong>小</strong>，那就将<strong>已排序元素</strong>向<strong>后移</strong>一位，使他本来位置变成一个<strong>空位</strong>，再将<strong>待排序数据</strong>插入空位。</li>
 </ul>
-<h4 id="完整代码：-1"><a href="#完整代码：-1" class="headerlink" title="完整代码："></a>完整代码：</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">insertionSort</span><span class="token punctuation">(</span><span class="token parameter">arr</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<h4 id="完整代码：-2"><a href="#完整代码：-2" class="headerlink" title="完整代码："></a>完整代码：</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">insertionSort</span><span class="token punctuation">(</span><span class="token parameter">arr</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">let</span> len <span class="token operator">=</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
   <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     <span class="token comment">// 循环未排序部分, i=1而不是0是因为默认0项为已排序部分</span>
@@ -322,12 +318,12 @@ function bubbleSort(arr) &#123;
 <blockquote>
 <p>快速排序有其它种实现方法，这是一种简单的实现，非原地排序，由于新建了多个新的数组，会增加空间复杂度，好处再于非常容易理解，可读性强，适合面试手写代码。</p>
 </blockquote>
-<h4 id="完整代码：-2"><a href="#完整代码：-2" class="headerlink" title="完整代码："></a>完整代码：</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">quickSort</span><span class="token punctuation">(</span><span class="token parameter">arr</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<h4 id="完整代码：-3"><a href="#完整代码：-3" class="headerlink" title="完整代码："></a>完整代码：</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">quickSort</span><span class="token punctuation">(</span><span class="token parameter">arr</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">.</span>length <span class="token operator">&lt;=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     <span class="token keyword">return</span> arr<span class="token punctuation">;</span>
   <span class="token punctuation">&#125;</span> <span class="token comment">// 递归边界条件</span>
   <span class="token keyword">let</span> pointIdx <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>arr<span class="token punctuation">.</span>length <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 在数组中间位置取一个基准点</span>
-  <span class="token keyword">let</span> point <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span>pointIdx<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 通过基准点找到这个值</span>
+  <span class="token keyword">let</span> point <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span>pointIdx<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 通过基准点找到这个值，使用splice原因是：要获取这个基准值的同时要把这个基准值从排序数组里删除掉</span>
   <span class="token keyword">let</span> left <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
   <span class="token keyword">let</span> right <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
   <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> len <span class="token operator">=</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -348,7 +344,7 @@ function bubbleSort(arr) &#123;
 <p>另外说一下，js 的原生提供的 <code>sort</code> 排序方法原理：如果数组长度<code>小于10</code>，使用插入排序，否则使用快速排序。如其名，快速排序的性能还是很好的。</p>
 <hr>
 
-<p>本文动画参考：<a target="_blank" rel="noopener" href="https://juejin.im/post/6844903444365443080">掘金</a><br>本文例子查看：<a target="_blank" rel="noopener" href="https://github.com/slc3a2/docs/tree/main/javascript_sort">GitHub</a></p>
+<p>动画来源：<a target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/merge-sort.html">菜鸟教程</a><br>查看例子：<a target="_blank" rel="noopener" href="https://github.com/slc3a2/docs/tree/main/javascript_sort">GitHub</a></p>
 
 
 <p style="font-style: italic">

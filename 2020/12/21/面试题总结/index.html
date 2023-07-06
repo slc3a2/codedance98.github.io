@@ -15,7 +15,7 @@
   
   <link rel="canonical" href="https://slc3a2.github.io/2020/12/21/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/">
   
-  <meta name="description" content="HTML和CSS部分  BFC 重排和重绘 行内元素特点 实现换肤功能  js部分  深拷贝 函数防抖和节流 跨域 实现instanceof 数组方法 字符串方法 继承 js垃圾回收机制 事件循环 迭代器和生成器 constructor和super关键字 类型检测 valueOf和toString ">
+  <meta name="description" content="HTML和CSS部分  BFC 重排和重绘 行内元素特点 实现换肤功能  js部分  深拷贝 函数防抖和节流 继承 跨域 数组方法 字符串方法 js垃圾回收机制 类型检测 valueOf和toString proxy和reflect requestAnimationFrame 事件循环 迭代器和生成">
   
   
   <meta name="author" content="slc3a2">
@@ -26,14 +26,14 @@
   <meta property="og:type" content="article" />
   <meta property="og:title" content="前端面试题总结" />
   
-  <meta property="og:description" content="HTML和CSS部分  BFC 重排和重绘 行内元素特点 实现换肤功能  js部分  深拷贝 函数防抖和节流 跨域 实现instanceof 数组方法 字符串方法 继承 js垃圾回收机制 事件循环 迭代器和生成器 constructor和super关键字 类型检测 valueOf和toString ">
+  <meta property="og:description" content="HTML和CSS部分  BFC 重排和重绘 行内元素特点 实现换肤功能  js部分  深拷贝 函数防抖和节流 继承 跨域 数组方法 字符串方法 js垃圾回收机制 类型检测 valueOf和toString proxy和reflect requestAnimationFrame 事件循环 迭代器和生成">
   
   <meta property="og:url" content="https://slc3a2.github.io/2020/12/21/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/" />
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="前端面试题总结">
   
-  <meta name="twitter:description" content="HTML和CSS部分  BFC 重排和重绘 行内元素特点 实现换肤功能  js部分  深拷贝 函数防抖和节流 跨域 实现instanceof 数组方法 字符串方法 继承 js垃圾回收机制 事件循环 迭代器和生成器 constructor和super关键字 类型检测 valueOf和toString ">
+  <meta name="twitter:description" content="HTML和CSS部分  BFC 重排和重绘 行内元素特点 实现换肤功能  js部分  深拷贝 函数防抖和节流 继承 跨域 数组方法 字符串方法 js垃圾回收机制 类型检测 valueOf和toString proxy和reflect requestAnimationFrame 事件循环 迭代器和生成">
   
   
   <meta name="twitter:image" content="https://slc3a2.github.ioundefined">
@@ -225,24 +225,24 @@
 <ul>
 <li><a href="#%E6%B7%B1%E6%8B%B7%E8%B4%9D">深拷贝</a></li>
 <li><a href="#%E5%87%BD%E6%95%B0%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81">函数防抖和节流</a></li>
+<li><a href="#%E7%BB%A7%E6%89%BF">继承</a></li>
 <li><a href="#%E8%B7%A8%E5%9F%9F">跨域</a></li>
-<li><a href="#%E5%AE%9E%E7%8E%B0instanceof">实现instanceof</a></li>
 <li><a href="#%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95">数组方法</a></li>
 <li><a href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95">字符串方法</a></li>
-<li><a href="#%E7%BB%A7%E6%89%BF">继承</a></li>
 <li><a href="#js%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6">js垃圾回收机制</a></li>
-<li><a href="#%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF">事件循环</a></li>
-<li><a href="#%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%92%8C%E7%94%9F%E6%88%90%E5%99%A8">迭代器和生成器</a></li>
-<li><a href="#constructor%E5%92%8Csuper%E5%85%B3%E9%94%AE%E5%AD%97">constructor和super关键字</a></li>
 <li><a href="#%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%B5%8B">类型检测</a></li>
 <li><a href="#valueOf%E5%92%8CtoString">valueOf和toString</a></li>
-<li><a href="#%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98%E4%B8%8E%E5%86%92%E6%B3%A1%E5%92%8C%E6%8D%95%E8%8E%B7">事件委托与冒泡和捕获</a></li>
 <li><a href="#proxy%E5%92%8Creflect">proxy和reflect</a></li>
 <li><a href="#requestAnimationFrame">requestAnimationFrame</a></li>
+<li><a href="#%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF">事件循环</a></li>
+<li><a href="#%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%92%8C%E7%94%9F%E6%88%90%E5%99%A8">迭代器和生成器</a></li>
+<li><a href="#%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98%E4%B8%8E%E5%86%92%E6%B3%A1%E5%92%8C%E6%8D%95%E8%8E%B7">事件委托与冒泡和捕获</a></li>
+<li><a href="#%E5%AE%9E%E7%8E%B0instanceof">实现instanceof</a></li>
+<li><a href="#constructor%E5%92%8Csuper%E5%85%B3%E9%94%AE%E5%AD%97">constructor和super关键字</a></li>
 </ul>
 <p><a href="#vue%E9%83%A8%E5%88%86">vue部分</a></p>
 <ul>
-<li><a href="#vue%E9%80%9A%E4%BF%A1">vue通信</a></li>
+<li><a href="#vue%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1">vue组件通信</a></li>
 <li><a href="#vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F">vue生命周期父子组件执行顺序</a></li>
 <li><a href="#%E5%89%8D%E7%AB%AF%E8%B7%AF%E7%94%B1">前端路由</a></li>
 <li><a href="#slot%E6%8F%92%E6%A7%BD">slot插槽</a></li>
@@ -255,9 +255,9 @@
 </ul>
 <p><a href="#%E5%85%B6%E4%BB%96">其他</a></p>
 <ul>
-<li><a href="#cookie%E7%9A%84%E5%87%A0%E7%A7%8D%E5%B1%9E%E6%80%A7%E5%92%8C%E4%BD%9C%E7%94%A8">cookie的几种属性和作用</a></li>
 <li><a href="#https%E8%AF%81%E4%B9%A6%E4%BD%9C%E7%94%A8">https证书作用</a></li>
 <li><a href="#npmRun">npm run</a></li>
+<li><a href="#cookie%E7%9A%84%E5%87%A0%E7%A7%8D%E5%B1%9E%E6%80%A7%E5%92%8C%E4%BD%9C%E7%94%A8">cookie的几种属性和作用</a></li>
 <li><a href="#http1.1%E9%95%BF%E8%BF%9E%E6%8E%A5&http2%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8%E5%8C%BA%E5%88%AB">http1.1长连接&amp;http2多路复用区别</a></li>
 <li><a href="#%E8%BE%93%E5%85%A5url%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%B1%95%E7%A4%BA%E7%BB%8F%E5%8E%86%E4%BA%86%E4%BB%80%E4%B9%88">输入url到页面展示经历了什么</a></li>
 <li><a href="#%E6%87%92%E5%8A%A0%E8%BD%BD">懒加载</a></li>
@@ -363,43 +363,39 @@
 <ul>
 <li><strong>节流</strong>：</li>
 </ul>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">throttle</span><span class="token punctuation">(</span><span class="token parameter">fun<span class="token punctuation">,</span> delay</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">throttle</span><span class="token punctuation">(</span><span class="token parameter">event<span class="token punctuation">,</span> delay</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">let</span> prev <span class="token operator">=</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>args</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     <span class="token comment">// ...args用来接受fun原有的参数，比如事件就是event对象</span>
     <span class="token keyword">let</span> now <span class="token operator">=</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span>now <span class="token operator">-</span> prev <span class="token operator">>=</span> delay<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-      <span class="token function">fun</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token function">event</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
       prev <span class="token operator">=</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><a href="https://slc3a2.github.io/2020/10/20/%E5%87%BD%E6%95%B0%E7%9A%84%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81/">查看详解</a></p>
-<h2 id="实现instanceof"><a href="#实现instanceof" class="headerlink" title="实现instanceof"></a>实现instanceof</h2><blockquote>
-<p>instanceof 运算符用于检测构造函数的 prototype 属性是否出现在某个实例对象的原型链上。<br><img src="/2020/12/21/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/bB3Sj9h8nyoOIVs.png" alt="6D190A1F-A82A-4F86-BC85-3AD9F5EA672B.png"></p>
-</blockquote>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> objProto <span class="token operator">=</span> obj<span class="token punctuation">.</span>__proto__<span class="token punctuation">;</span>
-   <span class="token keyword">while</span><span class="token punctuation">(</span>objProto<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-      <span class="token keyword">if</span> <span class="token punctuation">(</span>objProto <span class="token operator">===</span> ctor<span class="token punctuation">.</span>prototype<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-      <span class="token punctuation">&#125;</span>
-      objProto <span class="token operator">=</span> objProto<span class="token punctuation">.</span>__proto__<span class="token punctuation">;</span>
-   <span class="token punctuation">&#125;</span>
-   <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><ul>
+<li><p><strong>原型链继承</strong>： Cat 继承了 Animal，缺点：所有 Cat 实例都会共享原型链，不可以向 Animal 传参。</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">Cat</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+
+<span class="token class-name">Cat</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Animal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li><p><strong>call 继承/构造继承</strong>: 解决上面原型链建成俩问题，但是只是 Cat 实例，不是 Animal 的实例</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">Cat</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token function">Animal</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li><p><strong>组合继承</strong>：也就是前面两个方法合并，解决上面两个继承的缺点，唯一的缺点调用了两次父类构造函数，生成了两份实例（子类实例将子类原型上的那份屏蔽了）</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">Cat</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token function">Animal</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span>
 
-<span class="token keyword">var</span> <span class="token function-variable function">Food</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> <span class="token function-variable function">Meat</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-<span class="token class-name">Meat</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Food</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> meat <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Meat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token function">newInstanceof</span><span class="token punctuation">(</span>meat<span class="token punctuation">,</span> Meat<span class="token punctuation">)</span> <span class="token comment">// true</span>
-<span class="token function">newInstanceof</span><span class="token punctuation">(</span>meat<span class="token punctuation">,</span> Food<span class="token punctuation">)</span> <span class="token comment">// true</span>
-meat <span class="token keyword">instanceof</span> <span class="token class-name">Meat</span> <span class="token comment">// true</span>
-meat <span class="token keyword">instanceof</span> <span class="token class-name">Food</span> <span class="token comment">// true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>总的来说就是<code>meat.__proto__.constructor === Meat</code>，由于原型链是一条链，所以循环所有<code>__proto__</code>;<br>直到<code>null</code>为止，符合<code>Meat.prototype === meat.__proto__</code>即返回<code>true</code>，否则返回<code>false</code>。</p>
+<span class="token class-name">Cat</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Animal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">Cat</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>constructor <span class="token operator">=</span> Cat<span class="token punctuation">;</span> <span class="token comment">//修复构造函数指向</span>
+<span class="token comment">// 优点：</span>
+<span class="token comment">// 既是cat实例，又是Animal实例</span>
+<span class="token comment">// 没有共享原型方法问题，并可以传参数</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
 <h2 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h2><ul>
 <li><p><strong>jsonp</strong>： 利用 script 标签跨域，本质是加载一个外部 js</p>
 </li>
@@ -460,37 +456,12 @@ str<span class="token punctuation">.</span><span class="token function">split</s
 str<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">"o"</span><span class="token punctuation">,</span> <span class="token string">"a"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// hella world 替换字符，第一个参数可以是正则</span>
 str<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">hello</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ["hello"] 匹配字符串返回一个数组，参数常是正则</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><ul>
-<li><p><strong>原型链继承</strong>： Cat 继承了 Animal，缺点：所有 Cat 实例都会共享原型链，不可以向 Animal 传参。</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">Cat</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
-
-<span class="token class-name">Cat</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Animal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
-<li><p><strong>call 继承/构造继承</strong>: 解决上面原型链建成俩问题，但是只是 Cat 实例，不是 Animal 的实例</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">Cat</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token function">Animal</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
-<li><p><strong>组合继承</strong>：也就是前面两个方法合并，解决上面两个继承的缺点，唯一的缺点调用了两次父类构造函数，生成了两份实例（子类实例将子类原型上的那份屏蔽了）</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">Cat</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token function">Animal</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-
-<span class="token class-name">Cat</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Animal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token class-name">Cat</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>constructor <span class="token operator">=</span> Cat<span class="token punctuation">;</span> <span class="token comment">//修复构造函数指向</span>
-<span class="token comment">// 优点：</span>
-<span class="token comment">// 既是cat实例，又是Animal实例</span>
-<span class="token comment">// 没有共享原型方法问题，并可以传参数</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-</ul>
 <h2 id="js垃圾回收机制"><a href="#js垃圾回收机制" class="headerlink" title="js垃圾回收机制"></a>js垃圾回收机制</h2><blockquote>
 <p>当内存中的数据不需要时候，js 会自动使用垃圾回收算法释放掉</p>
 </blockquote>
 <ul>
 <li><strong>引用计算</strong> : 此算法把“对象是否不再需要”简化定义为“对象有没有其他对象引用到它”。如果没有引用指向该对象（零引用），对象将被垃圾回收机制回收。这是最初级的垃圾收集算法。 该算法有个限制：无法处理引用循环，两个对象互相引用的情况下，引用次数至少是 1，所以不会被回收掉</li>
 <li><strong>标记清除</strong> : 此算法把“对象是否不再需要”简化定义为“对象是否可以获得”。这个算法从根（root）全局对象开始先下查找，找到不可以被获得的对象，然后清除掉</li>
-</ul>
-<h2 id="constructor和super关键字"><a href="#constructor和super关键字" class="headerlink" title="constructor和super关键字"></a>constructor和super关键字</h2><p><code>class</code>是<code>ES6</code>新增的关键字，为了看起来更像<code>java</code>等面向对象语言，实际上是一个语法糖，等同于<code>ES5</code>的<code>function</code>来创建构造函数。</p>
-<ul>
-<li>constructor ：<code>constructors</code>是 class 中默认的一个关键字，会自动调用该方法，<code>class</code>中必须要有<code>constructor</code>，如果没有，会被默认添加。当 new 时，<code>constructor</code>会被执行返回一个 this，就是实例。</li>
-<li>super ： 当<code>class</code>有继承时，在<code>constructor</code>内部必须执行一遍 super()函数，B 继承 A，<code>super</code>相当于<code>A.prototype.constructor.call(this, props)</code>，另外 super()也指向父亲 A 的原型对象 <a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903638674980872">这里</a></li>
 </ul>
 <h2 id="类型检测"><a href="#类型检测" class="headerlink" title="类型检测"></a>类型检测</h2><ul>
 <li><strong>typeof</strong>: 除了基本数据类型，检测不到具体 object 类型(数组，对象，时间对象，正则，set，map)</li>
@@ -706,6 +677,35 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li>addeventListener 可以给一个事件注册多个 listener</li>
 <li>addEventListener 可以控制时间传播行为（捕获/冒泡，使用 removeEventListener 来解决）</li>
 </ul>
+<h2 id="实现instanceof"><a href="#实现instanceof" class="headerlink" title="实现instanceof"></a>实现instanceof</h2><blockquote>
+<p>instanceof 运算符用于检测构造函数的 prototype 属性是否出现在某个实例对象的原型链上。<br><img src="/2020/12/21/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/bB3Sj9h8nyoOIVs.png" alt="6D190A1F-A82A-4F86-BC85-3AD9F5EA672B.png"></p>
+</blockquote>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> objProto <span class="token operator">=</span> obj<span class="token punctuation">.</span>__proto__<span class="token punctuation">;</span>
+   <span class="token keyword">while</span><span class="token punctuation">(</span>objProto<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>objProto <span class="token operator">===</span> ctor<span class="token punctuation">.</span>prototype<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span>
+      objProto <span class="token operator">=</span> objProto<span class="token punctuation">.</span>__proto__<span class="token punctuation">;</span>
+   <span class="token punctuation">&#125;</span>
+   <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">var</span> <span class="token function-variable function">Food</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> <span class="token function-variable function">Meat</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token class-name">Meat</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Food</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> meat <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Meat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">newInstanceof</span><span class="token punctuation">(</span>meat<span class="token punctuation">,</span> Meat<span class="token punctuation">)</span> <span class="token comment">// true</span>
+<span class="token function">newInstanceof</span><span class="token punctuation">(</span>meat<span class="token punctuation">,</span> Food<span class="token punctuation">)</span> <span class="token comment">// true</span>
+meat <span class="token keyword">instanceof</span> <span class="token class-name">Meat</span> <span class="token comment">// true</span>
+meat <span class="token keyword">instanceof</span> <span class="token class-name">Food</span> <span class="token comment">// true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>总的来说就是<code>meat.__proto__.constructor === Meat</code>，由于原型链是一条链，所以循环所有<code>__proto__</code>;<br>直到<code>null</code>为止，符合<code>Meat.prototype === meat.__proto__</code>即返回<code>true</code>，否则返回<code>false</code>。</p>
+<h2 id="constructor和super关键字"><a href="#constructor和super关键字" class="headerlink" title="constructor和super关键字"></a>constructor和super关键字</h2><p><code>class</code>是<code>ES6</code>新增的关键字，为了看起来更像<code>java</code>等面向对象语言，实际上是一个语法糖，等同于<code>ES5</code>的<code>function</code>来创建构造函数。</p>
+<ul>
+<li>constructor ：<code>constructors</code>是 class 中默认的一个关键字，会自动调用该方法，<code>class</code>中必须要有<code>constructor</code>，如果没有，会被默认添加。当 new 时，<code>constructor</code>会被执行返回一个 this，就是实例。</li>
+<li>super ： 当<code>class</code>有继承时，在<code>constructor</code>内部必须执行一遍 super()函数，B 继承 A，<code>super</code>相当于<code>A.prototype.constructor.call(this, props)</code>，另外 super()也指向父亲 A 的原型对象， <a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903638674980872">详细解释</a>。如果当前类和父类都有同名方法，如何区分地获取呢，获取父类：super().fun，获取当前类：fun</li>
+</ul>
 <h1 id="vue部分"><a href="#vue部分" class="headerlink" title="vue部分"></a>vue部分</h1><h2 id="vue组件通信"><a href="#vue组件通信" class="headerlink" title="vue组件通信"></a>vue组件通信</h2><ul>
 <li>props 和 $emit</li>
 <li>provide inject：在组件 a 声明，在 a 下面所有子组件通过 inject 调用，通过参数传递</li>
@@ -743,14 +743,18 @@ window<span class="token punctuation">.</span>history<span class="token punctuat
 <li>history 需要修改服务器配置，来解决刷新空白问题，hash 本身就是属于前端的，不需要设置</li>
 </ul>
 <h2 id="slot插槽"><a href="#slot插槽" class="headerlink" title="slot插槽"></a>slot插槽</h2><ul>
-<li><p>匿名插插: 子组件包裹的内容会被显示到<code>slot</code>标签中中</p>
-</li>
-<li><p>具名插插：感觉名字多次显示，可复用</p>
-</li>
+<li>匿名插插: 子组件包裹的内容会被显示到<code>slot</code>标签中</li>
+</ul>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>child<span class="token operator">></span>父给子的内容<span class="token operator">&lt;</span><span class="token operator">/</span>child<span class="token operator">></span>
+
+<span class="token comment">// child组件中, 父给子的内容会显示slot标签里</span>
+<span class="token operator">&lt;</span>slot<span class="token operator">></span>父给子的内容<span class="token operator">&lt;</span><span class="token operator">/</span>slot<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>具名插插：感觉名字多次显示，可复用</li>
 </ul>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>div slot<span class="token operator">=</span><span class="token string">"down"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>的内容
-会被显示到<span class="token operator">&lt;</span>slot name<span class="token operator">=</span><span class="token string">"down"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>slot<span class="token operator">></span>里
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+会被显示到<span class="token operator">&lt;</span>slot name<span class="token operator">=</span><span class="token string">"down"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>slot<span class="token operator">></span>里<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <ul>
 <li>数据插槽：</li>
@@ -760,8 +764,7 @@ window<span class="token punctuation">.</span>history<span class="token punctuat
 <span class="token comment">// 组件中就可以用data了</span>
 <span class="token operator">&lt;</span>myslot v<span class="token operator">-</span>slot<span class="token operator">=</span><span class="token string">"data"</span><span class="token operator">></span>
  <span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> slotProps<span class="token punctuation">.</span>user<span class="token punctuation">.</span>firstName <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>myslot<span class="token operator">></span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token operator">&lt;</span><span class="token operator">/</span>myslot<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="mixin"><a href="#mixin" class="headerlink" title="mixin"></a>mixin</h2><p>vue mixin 是针对组件间功能共享来做的。可以对组件的任意部分进行 mixin，也就是说不同的组件，想使用同一个数组，或者方法，那么 mixin 就是来做这个事的，把公共部分提取出来作为 mixin</p>
 <p>声明：</p>
