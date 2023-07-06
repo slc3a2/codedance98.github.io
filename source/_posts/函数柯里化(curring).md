@@ -67,7 +67,17 @@ function currying(fn, ...args) {
   if (args.length >= fn.length) {
     return fn(...args);
   } else {
-    return (...args2) => currying(fn, ...args, ...args2);
+    return (...args2) => currying(fn, ...args, ...args2)
   }
 }
+
+// 使用
+const add = (a, b, c) => {console.log(a + b + c)}
+const currying_add = currying(add)
+
+// 结果
+currying_add(1, 2, 3)
+currying_add(1)(2, 3)
+currying_add(1, 2)(3)
+currying_add(1)(2)(3)
 ```
