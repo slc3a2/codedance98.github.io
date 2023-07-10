@@ -15,7 +15,7 @@
   
   <link rel="canonical" href="https://slc3a2.github.io/2020/12/21/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/">
   
-  <meta name="description" content="HTML和CSS部分  BFC 重排和重绘 行内元素特点 实现换肤功能  js部分  深拷贝 函数防抖和节流 继承 跨域 数组方法 字符串方法 js垃圾回收机制 类型检测 valueOf和toString proxy和reflect requestAnimationFrame 事件循环 迭代器和生成">
+  <meta name="description" content="HTML和CSS部分  BFC 重排和重绘 行内元素特点 实现换肤功能 link和@import区别 为什么要使用css预处理语言 src和href的区别  js部分  script的defer和async属性区别 深拷贝 函数防抖和节流 继承 跨域 数组方法 字符串方法 js垃圾回收机制 类型检测">
   
   
   <meta name="author" content="slc3a2">
@@ -26,14 +26,14 @@
   <meta property="og:type" content="article" />
   <meta property="og:title" content="前端面试题总结" />
   
-  <meta property="og:description" content="HTML和CSS部分  BFC 重排和重绘 行内元素特点 实现换肤功能  js部分  深拷贝 函数防抖和节流 继承 跨域 数组方法 字符串方法 js垃圾回收机制 类型检测 valueOf和toString proxy和reflect requestAnimationFrame 事件循环 迭代器和生成">
+  <meta property="og:description" content="HTML和CSS部分  BFC 重排和重绘 行内元素特点 实现换肤功能 link和@import区别 为什么要使用css预处理语言 src和href的区别  js部分  script的defer和async属性区别 深拷贝 函数防抖和节流 继承 跨域 数组方法 字符串方法 js垃圾回收机制 类型检测">
   
   <meta property="og:url" content="https://slc3a2.github.io/2020/12/21/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/" />
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="前端面试题总结">
   
-  <meta name="twitter:description" content="HTML和CSS部分  BFC 重排和重绘 行内元素特点 实现换肤功能  js部分  深拷贝 函数防抖和节流 继承 跨域 数组方法 字符串方法 js垃圾回收机制 类型检测 valueOf和toString proxy和reflect requestAnimationFrame 事件循环 迭代器和生成">
+  <meta name="twitter:description" content="HTML和CSS部分  BFC 重排和重绘 行内元素特点 实现换肤功能 link和@import区别 为什么要使用css预处理语言 src和href的区别  js部分  script的defer和async属性区别 深拷贝 函数防抖和节流 继承 跨域 数组方法 字符串方法 js垃圾回收机制 类型检测">
   
   
   <meta name="twitter:image" content="https://slc3a2.github.ioundefined">
@@ -220,9 +220,13 @@
 <li><a href="#%E9%87%8D%E6%8E%92%E5%92%8C%E9%87%8D%E7%BB%98">重排和重绘</a></li>
 <li><a href="#%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0%E7%89%B9%E7%82%B9">行内元素特点</a></li>
 <li><a href="#%E5%AE%9E%E7%8E%B0%E6%8D%A2%E8%82%A4%E5%8A%9F%E8%83%BD">实现换肤功能</a></li>
+<li><a href="#link%E5%92%8C@import%E5%8C%BA%E5%88%AB">link和@import区别</a></li>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8css%E9%A2%84%E5%A4%84%E7%90%86%E8%AF%AD%E8%A8%80">为什么要使用css预处理语言</a></li>
+<li><a href="#src%E5%92%8Chref%E7%9A%84%E5%8C%BA%E5%88%AB">src和href的区别</a></li>
 </ul>
 <p><a href="#js%E9%83%A8%E5%88%86">js部分</a></p>
 <ul>
+<li><a href="#script%E7%9A%84defer%E5%92%8Casync%E5%B1%9E%E6%80%A7%E5%8C%BA%E5%88%AB">script的defer和async属性区别</a></li>
 <li><a href="#%E6%B7%B1%E6%8B%B7%E8%B4%9D">深拷贝</a></li>
 <li><a href="#%E5%87%BD%E6%95%B0%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81">函数防抖和节流</a></li>
 <li><a href="#%E7%BB%A7%E6%89%BF">继承</a></li>
@@ -298,6 +302,17 @@
 <li>一个元素大量修改 css，可以设置为 position: fixed | absolute, 这样重排消耗少，因为不用考虑其他元素位置</li>
 <li>react vue 虚拟 dom</li>
 </ol>
+<h2 id="link和-import区别"><a href="#link和-import区别" class="headerlink" title="link和@import区别"></a>link和@import区别</h2><p><code>@import</code>属于css语法，只能加载css，<code>link</code>是html语法，不仅可以加载css，还可以加载网站icon等</p>
+<h2 id="为什么要使用css预处理语言"><a href="#为什么要使用css预处理语言" class="headerlink" title="为什么要使用css预处理语言"></a>为什么要使用css预处理语言</h2><p>类似scss(sass3+)，less等预处理css语言，扩展了css，具备<code>变量</code>、<code>mixins</code>、<code>函数</code>, <code>嵌套</code>，带有<code>作用域</code>，<code>支持块注释 //</code></p>
+<h2 id="src和href的区别"><a href="#src和href的区别" class="headerlink" title="src和href的区别"></a>src和href的区别</h2><p>src用于替代这个元素，而href用于建立这个标签与外部资源之间的关系。src加载资源会阻塞页面，href是加载并行。</p>
+<p>src:</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>/img.jpg<span class="token punctuation">'</span></span><span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>/jquery.js<span class="token punctuation">'</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>href:</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span> <span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/main.css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <h2 id="行内元素特点"><a href="#行内元素特点" class="headerlink" title="行内元素特点"></a>行内元素特点</h2><ul>
 <li>可以设置所有方向<code>margin</code>和<code>padding</code>，但是垂直方向无法更改布局</li>
 <li>设置<code>width</code>和<code>height</code>属性无效</li>
@@ -308,7 +323,12 @@
 <li>http 请求动态加载 .css 文件</li>
 <li>预编译 css 变量</li>
 </ul>
-<h1 id="js部分"><a href="#js部分" class="headerlink" title="js部分"></a>js部分</h1><h2 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 冷门深拷贝利用MessageChannel</span>
+<h1 id="js部分"><a href="#js部分" class="headerlink" title="js部分"></a>js部分</h1><h2 id="script的defer和async属性区别"><a href="#script的defer和async属性区别" class="headerlink" title="script的defer和async属性区别"></a>script的defer和async属性区别</h2><p>相比于基本的script标签、都可以实现<code>异步加载脚本</code>，只是执行脚本的时机不同，</p>
+<ul>
+<li><strong>async</strong>：加载完成后，<code>立即执行</code>，可以在dom没完全加载执行，如果多个script async，那么哪个<code>先加载完就</code>执行哪个，适合加载<code>无依</code>赖的js</li>
+<li><strong>defer</strong>：加载完成后，等到<code>dom加载完成后</code>执行，如果多个script defer，会严格按照他们的书写顺序<code>依次执行</code>，适合加载<code>互相依赖</code>的js</li>
+</ul>
+<h2 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 冷门深拷贝利用MessageChannel</span>
 <span class="token keyword">function</span> <span class="token function">deepClone</span><span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     <span class="token keyword">var</span> <span class="token punctuation">&#123;</span> port1<span class="token punctuation">,</span> port2 <span class="token punctuation">&#125;</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MessageChannel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
