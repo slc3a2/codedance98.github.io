@@ -15,7 +15,7 @@
   
   <link rel="canonical" href="https://slc3a2.github.io/2020/12/21/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/">
   
-  <meta name="description" content="HTML和CSS部分  BFC 重排和重绘 行内元素特点 实现换肤功能 link和@import区别 为什么要使用css预处理语言 src和href的区别  js部分  script的defer和async属性区别 深拷贝 函数防抖和节流 继承 跨域 数组方法 字符串方法 js垃圾回收机制 类型检测">
+  <meta name="description" content="HTML和CSS部分  BFC 重排和重绘 行内元素特点 实现换肤功能 link和@import区别 为什么要使用css预处理语言 src和href的区别  js部分  箭头函数和普通函数区别  script的defer和async属性区别  深拷贝  函数防抖和节流  继承  跨域  数组方法  ">
   
   
   <meta name="author" content="slc3a2">
@@ -26,14 +26,14 @@
   <meta property="og:type" content="article" />
   <meta property="og:title" content="前端面试题总结" />
   
-  <meta property="og:description" content="HTML和CSS部分  BFC 重排和重绘 行内元素特点 实现换肤功能 link和@import区别 为什么要使用css预处理语言 src和href的区别  js部分  script的defer和async属性区别 深拷贝 函数防抖和节流 继承 跨域 数组方法 字符串方法 js垃圾回收机制 类型检测">
+  <meta property="og:description" content="HTML和CSS部分  BFC 重排和重绘 行内元素特点 实现换肤功能 link和@import区别 为什么要使用css预处理语言 src和href的区别  js部分  箭头函数和普通函数区别  script的defer和async属性区别  深拷贝  函数防抖和节流  继承  跨域  数组方法  ">
   
   <meta property="og:url" content="https://slc3a2.github.io/2020/12/21/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/" />
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="前端面试题总结">
   
-  <meta name="twitter:description" content="HTML和CSS部分  BFC 重排和重绘 行内元素特点 实现换肤功能 link和@import区别 为什么要使用css预处理语言 src和href的区别  js部分  script的defer和async属性区别 深拷贝 函数防抖和节流 继承 跨域 数组方法 字符串方法 js垃圾回收机制 类型检测">
+  <meta name="twitter:description" content="HTML和CSS部分  BFC 重排和重绘 行内元素特点 实现换肤功能 link和@import区别 为什么要使用css预处理语言 src和href的区别  js部分  箭头函数和普通函数区别  script的defer和async属性区别  深拷贝  函数防抖和节流  继承  跨域  数组方法  ">
   
   
   <meta name="twitter:image" content="https://slc3a2.github.ioundefined">
@@ -226,23 +226,42 @@
 </ul>
 <p><a href="#js%E9%83%A8%E5%88%86">js部分</a></p>
 <ul>
-<li><a href="#script%E7%9A%84defer%E5%92%8Casync%E5%B1%9E%E6%80%A7%E5%8C%BA%E5%88%AB">script的defer和async属性区别</a></li>
-<li><a href="#%E6%B7%B1%E6%8B%B7%E8%B4%9D">深拷贝</a></li>
-<li><a href="#%E5%87%BD%E6%95%B0%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81">函数防抖和节流</a></li>
-<li><a href="#%E7%BB%A7%E6%89%BF">继承</a></li>
-<li><a href="#%E8%B7%A8%E5%9F%9F">跨域</a></li>
-<li><a href="#%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95">数组方法</a></li>
-<li><a href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95">字符串方法</a></li>
-<li><a href="#js%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6">js垃圾回收机制</a></li>
-<li><a href="#%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%B5%8B">类型检测</a></li>
-<li><a href="#valueOf%E5%92%8CtoString">valueOf和toString</a></li>
-<li><a href="#proxy%E5%92%8Creflect">proxy和reflect</a></li>
-<li><a href="#requestAnimationFrame">requestAnimationFrame</a></li>
-<li><a href="#%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF">事件循环</a></li>
-<li><a href="#%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%92%8C%E7%94%9F%E6%88%90%E5%99%A8">迭代器和生成器</a></li>
-<li><a href="#%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98%E4%B8%8E%E5%86%92%E6%B3%A1%E5%92%8C%E6%8D%95%E8%8E%B7">事件委托与冒泡和捕获</a></li>
-<li><a href="#%E5%AE%9E%E7%8E%B0instanceof">实现instanceof</a></li>
-<li><a href="#constructor%E5%92%8Csuper%E5%85%B3%E9%94%AE%E5%AD%97">constructor和super关键字</a></li>
+<li><p><a href="#%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0%E5%92%8C%E6%99%AE%E9%80%9A%E5%87%BD%E6%95%B0%E5%8C%BA%E5%88%AB">箭头函数和普通函数区别</a></p>
+</li>
+<li><p><a href="#script%E7%9A%84defer%E5%92%8Casync%E5%B1%9E%E6%80%A7%E5%8C%BA%E5%88%AB">script的defer和async属性区别</a></p>
+</li>
+<li><p><a href="#%E6%B7%B1%E6%8B%B7%E8%B4%9D">深拷贝</a></p>
+</li>
+<li><p><a href="#%E5%87%BD%E6%95%B0%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81">函数防抖和节流</a></p>
+</li>
+<li><p><a href="#%E7%BB%A7%E6%89%BF">继承</a></p>
+</li>
+<li><p><a href="#%E8%B7%A8%E5%9F%9F">跨域</a></p>
+</li>
+<li><p><a href="#%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95">数组方法</a></p>
+</li>
+<li><p><a href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95">字符串方法</a></p>
+</li>
+<li><p><a href="#js%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6">js垃圾回收机制</a></p>
+</li>
+<li><p><a href="#%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%B5%8B">类型检测</a></p>
+</li>
+<li><p><a href="#valueOf%E5%92%8CtoString">valueOf和toString</a></p>
+</li>
+<li><p><a href="#proxy%E5%92%8Creflect">proxy和reflect</a></p>
+</li>
+<li><p><a href="#requestAnimationFrame">requestAnimationFrame</a></p>
+</li>
+<li><p><a href="#%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF">事件循环</a></p>
+</li>
+<li><p><a href="#%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%92%8C%E7%94%9F%E6%88%90%E5%99%A8">迭代器和生成器</a></p>
+</li>
+<li><p><a href="#%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98%E4%B8%8E%E5%86%92%E6%B3%A1%E5%92%8C%E6%8D%95%E8%8E%B7">事件委托与冒泡和捕获</a></p>
+</li>
+<li><p><a href="#%E5%AE%9E%E7%8E%B0instanceof">实现instanceof</a></p>
+</li>
+<li><p><a href="#constructor%E5%92%8Csuper%E5%85%B3%E9%94%AE%E5%AD%97">constructor和super关键字</a></p>
+</li>
 </ul>
 <p><a href="#vue%E9%83%A8%E5%88%86">vue部分</a></p>
 <ul>
@@ -252,6 +271,7 @@
 <li><a href="#slot%E6%8F%92%E6%A7%BD">slot插槽</a></li>
 <li><a href="#mixin">mixin</a></li>
 <li><a href="#vuex">vuex</a></li>
+<li><a href="#keep-alive">keep-alive</a></li>
 </ul>
 <p><a href="#%E6%B7%B1%E6%8B%B7%E8%B4%9D">react部分</a></p>
 <ul>
@@ -323,7 +343,12 @@
 <li>http 请求动态加载 .css 文件</li>
 <li>预编译 css 变量</li>
 </ul>
-<h1 id="js部分"><a href="#js部分" class="headerlink" title="js部分"></a>js部分</h1><h2 id="script的defer和async属性区别"><a href="#script的defer和async属性区别" class="headerlink" title="script的defer和async属性区别"></a>script的defer和async属性区别</h2><p>相比于基本的script标签、都可以实现<code>异步加载脚本</code>，只是执行脚本的时机不同，</p>
+<h1 id="js部分"><a href="#js部分" class="headerlink" title="js部分"></a>js部分</h1><h2 id="箭头函数和普通函数区别"><a href="#箭头函数和普通函数区别" class="headerlink" title="箭头函数和普通函数区别"></a>箭头函数和普通函数区别</h2><ul>
+<li>没有自己this，继承父级的this</li>
+<li>没有自己arguments // Uncaught ReferenceError: arguments is not defined</li>
+<li>没有原型 // undefined</li>
+</ul>
+<h2 id="script的defer和async属性区别"><a href="#script的defer和async属性区别" class="headerlink" title="script的defer和async属性区别"></a>script的defer和async属性区别</h2><p>相比于基本的script标签、都可以实现<code>异步加载脚本</code>，只是执行脚本的时机不同，</p>
 <ul>
 <li><strong>async</strong>：加载完成后，<code>立即执行</code>，可以在dom没完全加载执行，如果多个script async，那么哪个<code>先加载完就</code>执行哪个，适合加载<code>无依</code>赖的js</li>
 <li><strong>defer</strong>：加载完成后，等到<code>dom加载完成后</code>执行，如果多个script defer，会严格按照他们的书写顺序<code>依次执行</code>，适合加载<code>互相依赖</code>的js</li>
@@ -786,6 +811,57 @@ window<span class="token punctuation">.</span>history<span class="token punctuat
  <span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> slotProps<span class="token punctuation">.</span>user<span class="token punctuation">.</span>firstName <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>myslot<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h2 id="keep-alive"><a href="#keep-alive" class="headerlink" title="keep-alive"></a>keep-alive</h2><p>keep-live是vue提供的内置缓存组件，可以保存组件状态，避免重新渲染，keep-alive有三个参数：</p>
+<ul>
+<li>include 匹配的组件会被缓存，参数：字符串、数组、正则</li>
+<li>exclude 匹配的组件不会被缓存，参数：字符串、数组、正则，和include同时存在一个组件的的话，exclude优先级更高</li>
+<li>max 可以限制最大可以缓存组件的数量，字符串或者数字</li>
+</ul>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 组件name为a或者b的组件缓存 <span class="token operator">--</span><span class="token operator">></span>
+<span class="token operator">&lt;</span>keep<span class="token operator">-</span>alive include<span class="token operator">=</span><span class="token string">"a,b"</span><span class="token operator">></span>
+  <span class="token operator">&lt;</span>component<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>component<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>keep<span class="token operator">-</span>alive<span class="token operator">></span>
+
+<span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 组件name为c的组件不缓存 <span class="token operator">--</span><span class="token operator">></span>
+<span class="token operator">&lt;</span>keep<span class="token operator">-</span>alive exclude<span class="token operator">=</span><span class="token string">"c"</span><span class="token operator">></span> 
+  <span class="token operator">&lt;</span>component<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>component<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>keep<span class="token operator">-</span>alive<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>缓存组件会多出两个生命周期，<code>activated</code>和<code>deactivated</code>，渲染和销毁</p>
+<p>keep-alive可配合 router-view 来实现组件缓存</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>keep<span class="token operator">-</span>alive<span class="token operator">></span>
+    <span class="token operator">&lt;</span>router<span class="token operator">-</span>view v<span class="token operator">-</span><span class="token keyword">if</span><span class="token operator">=</span><span class="token string">"$route.meta.keepAlive"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>router<span class="token operator">-</span>view<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>keep<span class="token operator">-</span>alive<span class="token operator">></span>
+<span class="token operator">&lt;</span>router<span class="token operator">-</span>view v<span class="token operator">-</span><span class="token keyword">if</span><span class="token operator">=</span><span class="token string">"!$route.meta.keepAlive"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>router<span class="token operator">-</span>view<span class="token operator">></span>
+
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">new</span> <span class="token class-name">Router</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+  routes<span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">&#123;</span>
+      path<span class="token operator">:</span> <span class="token string">'/'</span><span class="token punctuation">,</span>
+      name<span class="token operator">:</span> <span class="token string">'a'</span><span class="token punctuation">,</span>
+      component<span class="token operator">:</span> a<span class="token punctuation">,</span>
+      meta<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        keepAlive<span class="token operator">:</span> <span class="token boolean">false</span> <span class="token comment">// 不缓存</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#123;</span>
+      path<span class="token operator">:</span> <span class="token string">'/b'</span><span class="token punctuation">,</span>
+      name<span class="token operator">:</span> <span class="token string">'b'</span><span class="token punctuation">,</span>
+      component<span class="token operator">:</span> b<span class="token punctuation">,</span>
+      meta<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        keepAlive<span class="token operator">:</span> <span class="token boolean">true</span> <span class="token comment">// 缓存</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="nextTick"><a href="#nextTick" class="headerlink" title="nextTick"></a>nextTick</h2><p>nextTick可以获取下次最新 dom 的方法，因为vue的dom更新策略是异步的，只有一个事件循环结束后才会被应用来更新dom，这导致数据的修改不会立即表现在dom上，如果要获取更新后的 dom 状态，这时候就需要用到nextTick</p>
+<p>一些场景：</p>
+<ul>
+<li>created中想要获取DOM</li>
+<li>更改数据获取最新的dom</li>
+</ul>
 <h2 id="mixin"><a href="#mixin" class="headerlink" title="mixin"></a>mixin</h2><p>vue mixin 是针对组件间功能共享来做的。可以对组件的任意部分进行 mixin，也就是说不同的组件，想使用同一个数组，或者方法，那么 mixin 就是来做这个事的，把公共部分提取出来作为 mixin</p>
 <p>声明：</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 声明</span>
