@@ -1052,7 +1052,7 @@ imgOffsetTop <span class="token operator">&lt;</span> clientHeight <span class="
 <h4 id="协商缓存：（1-优先-2）"><a href="#协商缓存：（1-优先-2）" class="headerlink" title="协商缓存：（1 优先 2）"></a>协商缓存：（1 优先 2）</h4><ol>
 <li><p> 客户端第一次请求，从 http 响应头中拿到 <strong>Etag</strong>，是一个资源的唯一标识，随后客户端的每次请求会携带 <strong>If-None-Match</strong> 字段到请求头，服务器收到后，和当前资源唯一标识对比，如果不同，则说明有内容有更新了，则发送最新的数据，否则告诉客户端使用缓存。这是比较完善缓存机制</p>
 </li>
-<li><p> 客户端第一次请求，从 http 响应头中拿到<strong>Last-Modified</strong>，是内容最后修改时间，随后客户端的每次请求会携带 <strong>If-Modified-Since</strong> 字段到请求头，服务器拿到后，和 Last-Modified 对比，如果 If-Modified-Since 小于 Last-Modified，则说明有内容有更新了，则发送最新的数据，否则告诉客户端使用缓存。缺点是缓存的时间最小单位是秒，如果1秒内进行的更新，依旧会缓存，不够准确</p>
+<li><p> 客户端第一次请求，从 http 响应头中拿到 <strong>Last-Modified</strong>，是内容最后修改时间，随后客户端的每次请求会携带 <strong>If-Modified-Since</strong> 字段到请求头，服务器拿到后，和 Last-Modified 对比，如果 If-Modified-Since 小于 Last-Modified，则说明有内容有更新了，则发送最新的数据，否则告诉客户端使用缓存。缺点是缓存的时间最小单位是秒，如果1秒内进行的更新，依旧会缓存，不够准确</p>
 </li>
 </ol>
 <p>引用网上一张图：<br><img src="/2020/12/21/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/FvAIM258yHCTQba.png" alt="632130-20170210141453338-1263276228.png"></p>
