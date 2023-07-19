@@ -277,6 +277,7 @@
 <p><a href="#%E6%B7%B1%E6%8B%B7%E8%B4%9D">react部分</a></p>
 <ul>
 <li><a href="#react%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F">react生命周期</a></li>
+<li><a href="#react%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F">react数据响应式</a></li>
 </ul>
 <p><a href="#%E5%85%B6%E4%BB%96">其他</a></p>
 <ul>
@@ -948,6 +949,8 @@ methods<span class="token operator">:</span> <span class="token punctuation">&#1
 <li><strong>componentDidUpdate</strong>：组件完成更新后调用。初始化时不会被调用</li>
 <li><strong>componentWillUnmount</strong>： 组件要销毁前调用</li>
 </ul>
+<h2 id="react数据响应式"><a href="#react数据响应式" class="headerlink" title="react数据响应式"></a>react数据响应式</h2><p>react 的响应式是使用 diff 算法实现的。react 在 state 改变时，会调用 render() 方法，生成一个虚拟 DOM 树，React 会将这棵树与上一次生成的树进行比较，找出其中的差异，并更新差异的部分。这个过程是递归的，react 会以当前组件为根，递归比较所以子节点。为了优化性能，React 提供了 shouldComponentUpdate 生命周期方法，这个方法有两个参数，<strong>nextProps</strong>和<strong>nextState</strong>，表示上次props和上次stage，返回值是布尔值，如果这个方法返回 false，react 就跳过这个组件，不做 VDOM 比较，也不更新组件。</p>
+<p>在react16+版本，对diff过程进行了优化，从原来的diff树结构+递归的方式优化成fiber双向链表+循环执行。整个的diff过程分为render阶段和commit阶段，render就是对比过程，找到需要改变dom的那部分，commit就是执行改变dom的那部分，render阶段是可以分段的（中断，然后继续完成），类似原生的<strong>requestIdleCallback</strong>方法，在每个16ms帧内，会先执行用户输入，事件回调等优先级高的js任务。之后剩下的时间执行分段的render部分来进行数据更新，保证视觉上的页面流程度。</p>
 <h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="https证书作用"><a href="#https证书作用" class="headerlink" title="https证书作用"></a>https证书作用</h2><ul>
 <li>证书中存在一个公钥，一个私钥，私钥保密存在服务器不公开</li>
 <li>用户通过浏览器向服务器 443 端口连接，服务端收到请求，发给客户端一个带有公钥的证书</li>
