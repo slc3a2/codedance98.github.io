@@ -4,15 +4,15 @@ title: "⬅ Click Here"
 #main info
 #owner
 owner: "slc3a2"
-email: codedance98@gmail.com
+email: slc3a2@gmail.com
 info: "A web developer from China 🇨🇳"
 #description
 desc: "👋 This is slc3a2. welcome. here is just to record some fun 😁"
 
 #menu
 menu:
+  My Application: /myApplication
   Sponsor: /sponsor
-  My Application: /MyApplication
   # About: /About
 
 #index/main page max show posts (in number)
