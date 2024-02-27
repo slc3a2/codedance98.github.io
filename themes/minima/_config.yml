@@ -12,7 +12,7 @@ desc: "👋 This is slc3a2. welcome. here is just to record some fun 😁"
 #menu
 menu:
   Sponsor: /sponsor
-  # Works: /Works
+  My Application: /MyApplication
   # About: /About
 
 #index/main page max show posts (in number)
