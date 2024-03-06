@@ -283,17 +283,20 @@
 <li><a href="#react%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F">react生命周期</a></li>
 <li><a href="#react%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F">react数据响应式</a></li>
 </ul>
+<p><a href="#http%E9%83%A8%E5%88%86">http部分</a></p>
+<ul>
+<li><a href="#http%E7%BC%93%E5%AD%98">http缓存</a></li>
+<li><a href="#https%E6%8F%A1%E6%89%8B">https握手</a></li>
+<li><a href="#http1.1%E9%95%BF%E8%BF%9E%E6%8E%A5&http2%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8%E5%8C%BA%E5%88%AB">http1.1长连接&amp;http2多路复用区别</a></li>
+</ul>
 <p><a href="#%E5%85%B6%E4%BB%96">其他</a></p>
 <ul>
-<li><a href="#https%E8%AF%81%E4%B9%A6%E4%BD%9C%E7%94%A8">https证书作用</a></li>
 <li><a href="#npmRun">npm run</a></li>
 <li><a href="#cookie%E7%9A%84%E5%87%A0%E7%A7%8D%E5%B1%9E%E6%80%A7%E5%92%8C%E4%BD%9C%E7%94%A8">cookie的几种属性和作用</a></li>
-<li><a href="#http1.1%E9%95%BF%E8%BF%9E%E6%8E%A5&http2%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8%E5%8C%BA%E5%88%AB">http1.1长连接&amp;http2多路复用区别</a></li>
 <li><a href="#%E8%BE%93%E5%85%A5url%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%B1%95%E7%A4%BA%E7%BB%8F%E5%8E%86%E4%BA%86%E4%BB%80%E4%B9%88">输入url到页面展示经历了什么</a></li>
 <li><a href="#%E6%87%92%E5%8A%A0%E8%BD%BD">懒加载</a></li>
 <li><a href="commonjs%E6%A8%A1%E5%9D%97%E5%92%8Ces6%E6%A8%A1%E5%9D%97%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB">commonjs模块和es6模块有什么区别</a></li>
 <li><a href="#%E5%89%8D%E7%AB%AF%E4%BC%98%E5%8C%96">前端优化</a></li>
-<li><a href="#http%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6">http缓存机制</a></li>
 <li><a href="#%E5%B8%B8%E8%A7%81%E7%AE%97%E6%B3%95%E4%BB%8B%E7%BB%8D">常见算法介绍</a></li>
 <li><a href="#babel%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86">babel工作原理</a></li>
 </ul>
@@ -955,15 +958,36 @@ methods<span class="token operator">:</span> <span class="token punctuation">&#1
 </ul>
 <h2 id="react数据响应式"><a href="#react数据响应式" class="headerlink" title="react数据响应式"></a>react数据响应式</h2><p>react 的响应式是使用 diff 算法实现的。react 在 state 改变时，会调用 render() 方法，生成一个虚拟 DOM 树，React 会将这棵树与上一次生成的树进行比较，找出其中的差异，并更新差异的部分。这个过程是递归的，react 会以当前组件为根，递归比较所以子节点。为了优化性能，React 提供了 shouldComponentUpdate 生命周期方法，这个方法有两个参数，<strong>nextProps</strong>和<strong>nextState</strong>，表示上次props和上次stage，返回值是布尔值，如果这个方法返回 false，react 就跳过这个组件，不做 VDOM 比较，也不更新组件。</p>
 <p>在react16+版本，对diff过程进行了优化，从原来的diff树结构+递归的方式优化成fiber双向链表+循环执行。整个的diff过程分为render阶段和commit阶段，render就是对比过程，找到需要改变dom的那部分，commit就是执行改变dom的那部分，render阶段是可以分段的（中断，然后继续完成），类似原生的<strong>requestIdleCallback</strong>方法，在每个16ms帧内，会先执行用户输入，事件回调等优先级高的js任务。之后剩下的时间执行分段的render部分来进行数据更新，保证视觉上的页面流程度。</p>
-<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="https证书作用"><a href="#https证书作用" class="headerlink" title="https证书作用"></a>https证书作用</h2><ul>
-<li>证书中存在一个公钥，一个私钥，私钥保密存在服务器不公开</li>
-<li>用户通过浏览器向服务器 443 端口连接，服务端收到请求，发给客户端一个带有公钥的证书</li>
-<li>客户端收到证书，先验证合法性（是否在有效期内、证书的域名与请求的域名是否匹配，通过继续，不通过提示警告</li>
-<li>客户端再生成一个随机 key，通过公钥加密，发给服务端</li>
-<li>服务端收到随机 key 密文，用私钥解密，拿到客户端的随机 key，通过随机 key 对内容进行对称加密，发给客户端</li>
-<li>客户端收到密文，用随机 key 解密，完成</li>
+<h1 id="http部分"><a href="#http部分" class="headerlink" title="http部分"></a>http部分</h1><h2 id="http缓存"><a href="#http缓存" class="headerlink" title="http缓存"></a>http缓存</h2><p>分为 <strong>强缓存</strong> 和 <strong>协商缓存</strong>，如果同时存在，<strong>强缓存</strong> 优先 <strong>协商缓存</strong></p>
+<h4 id="强缓存："><a href="#强缓存：" class="headerlink" title="强缓存："></a>强缓存：</h4><ul>
+<li>响应头 Expires：<em>Fri, 31 Dec 2024 23:59:59 GMT</em>，在这个时间之前，直接读缓存，否则请求新内容，因为值是一个服务端返回的时间，这是 http 1.0 的产物，如果客户端和服务端时间不一致，就会和预期不符，所以在 http 1.1 中新增 Cache Control 来控制缓存</li>
+<li>Cache Control：max-age=x秒，在x秒内直接读缓存，避免了 expires 时间不一致问题</li>
 </ul>
-<h2 id="npmRun"><a href="#npmRun" class="headerlink" title="npmRun"></a>npmRun</h2><p>会自动到 package.json 找到对应的命令执行。如果没有全局命令，会自动到<code>node_modules/.bin/</code>下找到对应可执行文件执行，这时<code>npm run xxx</code>等同于直接调用<code>./node_modules/.bin/xxx</code></p>
+<p>Cache Control 其他的value：</p>
+<ul>
+<li>Private:  私有缓存，资源可以仅可以被客户端缓存（默认值）</li>
+<li>Public: 资源可以被任何缓存（包括中间代理服务器）缓存</li>
+<li>No-Cache: 协商缓存</li>
+<li>No-Store: 绝对不缓存</li>
+<li>Max-Age：强缓存</li>
+</ul>
+<h4 id="协商缓存-（Last-Modified-优先-ETag）"><a href="#协商缓存-（Last-Modified-优先-ETag）" class="headerlink" title="协商缓存 （Last-Modified 优先 ETag）"></a>协商缓存 （Last-Modified 优先 ETag）</h4><p>当 Cache Control 设置为 No-Cache 时使用</p>
+<ul>
+<li>Last-Modified / If-Modified-Since：服务器会返回上次修改时间 Last-Modified，浏览器下次请求时请求头会带上 If-Modified-Since ，然后由服务端验证，如果 If-Modified-Since 在 Last-Modified 时间以内 ，就返回304，浏览器读缓存，否则返回新内容</li>
+<li>ETag / If-None-Match：服务器会返回内容hash ETag响应头，浏览器下次请求时请求头会带上 If-None-Match ，然后由服务端验证，如果一致，就返回304，浏览器读缓存，否则返回新内容</li>
+</ul>
+<p>附上一张说明图：</p>
+<p><img src="/2020/12/21/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/FvAIM258yHCTQba.png" alt="632130-20170210141453338-1263276228.png"></p>
+<h2 id="https握手"><a href="#https握手" class="headerlink" title="https握手"></a>https握手</h2><p>https 是 http 的安全扩展，相当于 HTTP + SSL(TLS) = HTTPS。SSL 即安全套接字层，它在 OSI 七层网络模型中处于第五层即网络层，TLS 是 SSL 的新版本，最后一个 SSL 3.0 版本在2015年废弃，之后就是 TLS，现在常见的 TLS 版本是 1.2 和 1.3 版本。那么 TLS 是如何实现的呢？</p>
+<ul>
+<li><strong>浏览器</strong> =&gt; 服务器：请求发起，建立 SSL 连接，发送 TLS 协议版本号 + 支持的加密方法列表 + 客户端随机数</li>
+<li>服务器 =&gt; <strong>浏览器</strong>：判断加密协议版本是否一致，并确认加密方法，都没问题则返回服务器证书 + 服务端随机数</li>
+<li><strong>浏览器</strong> =&gt; 服务器：收到服务器证书，检查颁发机构、过期时间、域名，没有问题，则生成一个字符串（通过上面 客户端随机数 + 服务端随机数 生成），并用公钥（从服务器证书里取出）加密（非对称加密），发给服务器</li>
+<li>服务器 =&gt; <strong>浏览器</strong>：服务器用自己的私钥解密，得到这个字符串，后续使用这个字符串进行对称加密进行通信</li>
+</ul>
+<h2 id="http1-1长连接-amp-http2多路复用区别："><a href="#http1-1长连接-amp-http2多路复用区别：" class="headerlink" title="http1.1长连接&amp;http2多路复用区别："></a>http1.1长连接&amp;http2多路复用区别：</h2><p><strong>http1.1 长连接</strong>：<strong>同一个域名访问同一个文件的多个请求</strong>都可以复用一个 tcp 连接（不用像 1.0 一样 每次请求都需要重新建立连接，但不是并行，只能按顺序执行。</p>
+<p><strong>http2 多路复用</strong>：<strong>同一个域名访问多个文件的多个请求</strong>也可以复用一个 tcp 连接，且多个请求可以被并行处理。</p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="npmRun"><a href="#npmRun" class="headerlink" title="npmRun"></a>npmRun</h2><p>会自动到 package.json 找到对应的命令执行。如果没有全局命令，会自动到<code>node_modules/.bin/</code>下找到对应可执行文件执行，这时<code>npm run xxx</code>等同于直接调用<code>./node_modules/.bin/xxx</code></p>
 <h2 id="cookie的几种属性和作用"><a href="#cookie的几种属性和作用" class="headerlink" title="cookie的几种属性和作用"></a>cookie的几种属性和作用</h2><ul>
 <li><strong>name</strong>: 名字</li>
 <li><strong>value</strong>: 值</li>
@@ -979,8 +1003,6 @@ methods<span class="token operator">:</span> <span class="token punctuation">&#1
 <li><strong>secure</strong>: 是否只能使用 https 传递此 cookie</li>
 <li><strong>expires</strong>: 过期时间；值是时间意思是到这个时间，cookie 失效，否则是 session，即退出浏览器后自动失效</li>
 </ul>
-<h2 id="http1-1长连接-amp-http2多路复用区别："><a href="#http1-1长连接-amp-http2多路复用区别：" class="headerlink" title="http1.1长连接&amp;http2多路复用区别："></a>http1.1长连接&amp;http2多路复用区别：</h2><p><strong>http1.1 长连接</strong>：<strong>同一个域名访问同一个文件的多个请求</strong>都可以复用一个 tcp 连接（不用像 1.0 一样 每次请求都需要重新建立连接，但不是并行，只能按顺序执行。</p>
-<p><strong>http2 多路复用</strong>：<strong>同一个域名访问多个文件的多个请求</strong>也可以复用一个 tcp 连接，且多个请求可以被并行处理。</p>
 <h2 id="输入url到页面展示经历了什么"><a href="#输入url到页面展示经历了什么" class="headerlink" title="输入url到页面展示经历了什么"></a>输入url到页面展示经历了什么</h2><ul>
 <li><p><strong>dns 解析</strong>：按照这个步骤查询，找到 ip，立即中断返回给客户端（浏览器缓存 =&gt; 操作系统缓存(host) =&gt; 路由器缓存 =&gt; 本地服务器缓存 =&gt; isp dnf 服务器查询 =&gt; 根 dns 服务器）</p>
 </li>
@@ -1040,29 +1062,6 @@ imgOffsetTop <span class="token operator">&lt;</span> clientHeight <span class="
 <li>减少重排，多使用类名或者 csstext 处理样式</li>
 <li>多使用 flex，性能优，兼容性好</li>
 </ul>
-<h2 id="http缓存机制"><a href="#http缓存机制" class="headerlink" title="http缓存机制"></a>http缓存机制</h2><p>分为两类：<strong>强制缓存</strong> 和 <strong>协商缓存</strong>，可以同时存在，如果同时存在，<strong>强制缓存</strong> 优先 <strong>协商缓存</strong></p>
-<h4 id="强缓存：不会向服务器发起请求，直接从缓存中获取资源"><a href="#强缓存：不会向服务器发起请求，直接从缓存中获取资源" class="headerlink" title="强缓存：不会向服务器发起请求，直接从缓存中获取资源"></a>强缓存：不会向服务器发起请求，直接从缓存中获取资源</h4><ul>
-<li>Expires</li>
-</ul>
-<p>服务端会通过Expires字段来告诉浏览器过期时间（GMT格林尼治时间时间），如果浏览器下次请求时，当时间没有到Expires返回的时间，直接304，使用缓存。Expires是http1.0版本缓存机制，版本较老，现在默认浏览器使用的http为1.1版本，缺点：服务端和浏览器时间要同步</p>
-<ul>
-<li>Cache-Control</li>
-</ul>
-<p>（<code>Cache-Control</code>优先<code>Expires</code>）他有以下几种值：</p>
-<ul>
-<li>private: 客户端可以缓存</li>
-<li>public: 客户端和代理服务器都可以缓存</li>
-<li>max-age=xxx: 强缓存，缓存将在 xxx 秒后失效，服务端会返回一个相对时间，在这时间内，直接使用缓存</li>
-<li>no-cache: 需要使用对比缓存来验证数据</li>
-<li>no-store: 不缓存</li>
-</ul>
-<h4 id="协商缓存：（1-优先-2）"><a href="#协商缓存：（1-优先-2）" class="headerlink" title="协商缓存：（1 优先 2）"></a>协商缓存：（1 优先 2）</h4><ol>
-<li><p> 客户端第一次请求，从 http 响应头中拿到 <strong>Etag</strong>，是一个资源的唯一标识，随后客户端的每次请求会携带 <strong>If-None-Match</strong> 字段到请求头，服务器收到后，和当前资源唯一标识对比，如果不同，则说明有内容有更新了，则发送最新的数据，否则告诉客户端使用缓存。这是比较完善缓存机制</p>
-</li>
-<li><p> 客户端第一次请求，从 http 响应头中拿到 <strong>Last-Modified</strong>，是内容最后修改时间，随后客户端的每次请求会携带 <strong>If-Modified-Since</strong> 字段到请求头，服务器拿到后，和 Last-Modified 对比，如果 If-Modified-Since 小于 Last-Modified，则说明有内容有更新了，则发送最新的数据，否则告诉客户端使用缓存。缺点是缓存的时间最小单位是秒，如果1秒内进行的更新，依旧会缓存，不够准确</p>
-</li>
-</ol>
-<p>引用网上一张图：<br><img src="/2020/12/21/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/FvAIM258yHCTQba.png" alt="632130-20170210141453338-1263276228.png"></p>
 <h2 id="常见算法介绍"><a href="#常见算法介绍" class="headerlink" title="常见算法介绍"></a>常见算法介绍</h2><ul>
 <li><p><strong>二分查找</strong>：也称折半查找（Binary Search），它是一种效率较高的查找方法，前提是数据结构必须先排好序，可以在数据规模的对数时间复杂度内完成查找。但是，二分查找要求线性表具有有随机访问的特点（例如数组），也要求线性表能够根据中间元素的特点推测它两侧元素的性质，以达到缩减问题规模的效果。</p>
 </li>
