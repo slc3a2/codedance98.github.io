@@ -295,7 +295,7 @@
 <li><a href="#cookie%E7%9A%84%E5%87%A0%E7%A7%8D%E5%B1%9E%E6%80%A7%E5%92%8C%E4%BD%9C%E7%94%A8">cookie的几种属性和作用</a></li>
 <li><a href="#%E8%BE%93%E5%85%A5url%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%B1%95%E7%A4%BA%E7%BB%8F%E5%8E%86%E4%BA%86%E4%BB%80%E4%B9%88">输入url到页面展示经历了什么</a></li>
 <li><a href="#%E6%87%92%E5%8A%A0%E8%BD%BD">懒加载</a></li>
-<li><a href="commonjs%E6%A8%A1%E5%9D%97%E5%92%8Ces6%E6%A8%A1%E5%9D%97%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB">commonjs模块和es6模块有什么区别</a></li>
+<li><a href="#commonjs%E6%A8%A1%E5%9D%97%E5%92%8Ces6%E6%A8%A1%E5%9D%97%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB">commonjs模块和es6模块有什么区别</a></li>
 <li><a href="#%E5%89%8D%E7%AB%AF%E4%BC%98%E5%8C%96">前端优化</a></li>
 <li><a href="#%E5%B8%B8%E8%A7%81%E7%AE%97%E6%B3%95%E4%BB%8B%E7%BB%8D">常见算法介绍</a></li>
 <li><a href="#babel%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86">babel工作原理</a></li>
@@ -985,7 +985,7 @@ methods<span class="token operator">:</span> <span class="token punctuation">&#1
 <li><strong>浏览器</strong> =&gt; 服务器：收到服务器证书，检查颁发机构、过期时间、域名，没有问题，则生成一个字符串（通过上面 客户端随机数 + 服务端随机数 生成），并用公钥（从服务器证书里取出）加密（非对称加密），发给服务器</li>
 <li>服务器 =&gt; <strong>浏览器</strong>：服务器用自己的私钥解密，得到这个字符串，后续使用这个字符串进行对称加密进行通信</li>
 </ul>
-<h2 id="http1-1长连接-amp-http2多路复用区别："><a href="#http1-1长连接-amp-http2多路复用区别：" class="headerlink" title="http1.1长连接&amp;http2多路复用区别："></a>http1.1长连接&amp;http2多路复用区别：</h2><p><strong>http1.1 长连接</strong>：<strong>同一个域名访问同一个文件的多个请求</strong>都可以复用一个 tcp 连接（不用像 1.0 一样 每次请求都需要重新建立连接，但不是并行，只能按顺序执行。</p>
+<h2 id="http1-1长连接-amp-http2多路复用区别"><a href="#http1-1长连接-amp-http2多路复用区别" class="headerlink" title="http1.1长连接&amp;http2多路复用区别"></a>http1.1长连接&amp;http2多路复用区别</h2><p><strong>http1.1 长连接</strong>：<strong>同一个域名访问同一个文件的多个请求</strong>都可以复用一个 tcp 连接（不用像 1.0 一样 每次请求都需要重新建立连接，但不是并行，只能按顺序执行。</p>
 <p><strong>http2 多路复用</strong>：<strong>同一个域名访问多个文件的多个请求</strong>也可以复用一个 tcp 连接，且多个请求可以被并行处理。</p>
 <h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="npmRun"><a href="#npmRun" class="headerlink" title="npmRun"></a>npmRun</h2><p>会自动到 package.json 找到对应的命令执行。如果没有全局命令，会自动到<code>node_modules/.bin/</code>下找到对应可执行文件执行，这时<code>npm run xxx</code>等同于直接调用<code>./node_modules/.bin/xxx</code></p>
 <h2 id="cookie的几种属性和作用"><a href="#cookie的几种属性和作用" class="headerlink" title="cookie的几种属性和作用"></a>cookie的几种属性和作用</h2><ul>
