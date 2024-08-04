@@ -15,7 +15,7 @@
   
   <link rel="canonical" href="https://slc3a2.github.io/2020/12/21/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/">
   
-  <meta name="description" content="HTML和CSS部分  BFC 重排和重绘 行内元素特点 实现换肤功能 link和@import区别 为什么要使用css预处理语言 src和href的区别  js部分  箭头函数和普通函数区别  script的defer和async属性区别  深拷贝  函数防抖和节流  继承  跨域  数组方法  ">
+  <meta name="description" content="HTML 和 CSS 部分  BFC 重排和重绘 行内元素特点 实现换肤功能 link 和@import 区别 为什么要使用 css 预处理语言 src 和 href 的区别  js 部分  箭头函数和普通函数区别  script 的 defer 和 async 属性区别  深拷贝  函数防抖和节流">
   
   
   <meta name="author" content="slc3a2">
@@ -26,14 +26,14 @@
   <meta property="og:type" content="article" />
   <meta property="og:title" content="前端面试题总结" />
   
-  <meta property="og:description" content="HTML和CSS部分  BFC 重排和重绘 行内元素特点 实现换肤功能 link和@import区别 为什么要使用css预处理语言 src和href的区别  js部分  箭头函数和普通函数区别  script的defer和async属性区别  深拷贝  函数防抖和节流  继承  跨域  数组方法  ">
+  <meta property="og:description" content="HTML 和 CSS 部分  BFC 重排和重绘 行内元素特点 实现换肤功能 link 和@import 区别 为什么要使用 css 预处理语言 src 和 href 的区别  js 部分  箭头函数和普通函数区别  script 的 defer 和 async 属性区别  深拷贝  函数防抖和节流">
   
   <meta property="og:url" content="https://slc3a2.github.io/2020/12/21/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/" />
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="前端面试题总结">
   
-  <meta name="twitter:description" content="HTML和CSS部分  BFC 重排和重绘 行内元素特点 实现换肤功能 link和@import区别 为什么要使用css预处理语言 src和href的区别  js部分  箭头函数和普通函数区别  script的defer和async属性区别  深拷贝  函数防抖和节流  继承  跨域  数组方法  ">
+  <meta name="twitter:description" content="HTML 和 CSS 部分  BFC 重排和重绘 行内元素特点 实现换肤功能 link 和@import 区别 为什么要使用 css 预处理语言 src 和 href 的区别  js 部分  箭头函数和普通函数区别  script 的 defer 和 async 属性区别  深拷贝  函数防抖和节流">
   
   
   <meta name="twitter:image" content="https://slc3a2.github.ioundefined">
@@ -218,21 +218,21 @@
 </script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@2.7.8/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
-  <p><a href="#HTML%E5%92%8CCSS">HTML和CSS部分</a></p>
+  <p><a href="#HTML%E5%92%8CCSS">HTML 和 CSS 部分</a></p>
 <ul>
 <li><a href="#BFC">BFC</a></li>
 <li><a href="#%E9%87%8D%E6%8E%92%E5%92%8C%E9%87%8D%E7%BB%98">重排和重绘</a></li>
 <li><a href="#%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0%E7%89%B9%E7%82%B9">行内元素特点</a></li>
 <li><a href="#%E5%AE%9E%E7%8E%B0%E6%8D%A2%E8%82%A4%E5%8A%9F%E8%83%BD">实现换肤功能</a></li>
-<li><a href="#link%E5%92%8C@import%E5%8C%BA%E5%88%AB">link和@import区别</a></li>
-<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8css%E9%A2%84%E5%A4%84%E7%90%86%E8%AF%AD%E8%A8%80">为什么要使用css预处理语言</a></li>
-<li><a href="#src%E5%92%8Chref%E7%9A%84%E5%8C%BA%E5%88%AB">src和href的区别</a></li>
+<li><a href="#link%E5%92%8C@import%E5%8C%BA%E5%88%AB">link 和@import 区别</a></li>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8css%E9%A2%84%E5%A4%84%E7%90%86%E8%AF%AD%E8%A8%80">为什么要使用 css 预处理语言</a></li>
+<li><a href="#src%E5%92%8Chref%E7%9A%84%E5%8C%BA%E5%88%AB">src 和 href 的区别</a></li>
 </ul>
-<p><a href="#js%E9%83%A8%E5%88%86">js部分</a></p>
+<p><a href="#js%E9%83%A8%E5%88%86">js 部分</a></p>
 <ul>
 <li><p><a href="#%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0%E5%92%8C%E6%99%AE%E9%80%9A%E5%87%BD%E6%95%B0%E5%8C%BA%E5%88%AB">箭头函数和普通函数区别</a></p>
 </li>
-<li><p><a href="#script%E7%9A%84defer%E5%92%8Casync%E5%B1%9E%E6%80%A7%E5%8C%BA%E5%88%AB">script的defer和async属性区别</a></p>
+<li><p><a href="#script%E7%9A%84defer%E5%92%8Casync%E5%B1%9E%E6%80%A7%E5%8C%BA%E5%88%AB">script 的 defer 和 async 属性区别</a></p>
 </li>
 <li><p><a href="#%E6%B7%B1%E6%8B%B7%E8%B4%9D">深拷贝</a></p>
 </li>
@@ -246,13 +246,13 @@
 </li>
 <li><p><a href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95">字符串方法</a></p>
 </li>
-<li><p><a href="#js%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6">js垃圾回收机制</a></p>
+<li><p><a href="#js%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6">js 垃圾回收机制</a></p>
 </li>
 <li><p><a href="#%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%B5%8B">类型检测</a></p>
 </li>
-<li><p><a href="#valueOf%E5%92%8CtoString">valueOf和toString</a></p>
+<li><p><a href="#valueOf%E5%92%8CtoString">valueOf 和 toString</a></p>
 </li>
-<li><p><a href="#proxy%E5%92%8Creflect">proxy和reflect</a></p>
+<li><p><a href="#proxy%E5%92%8Creflect">proxy 和 reflect</a></p>
 </li>
 <li><p><a href="#requestAnimationFrame">requestAnimationFrame</a></p>
 </li>
@@ -262,45 +262,45 @@
 </li>
 <li><p><a href="#%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98%E4%B8%8E%E5%86%92%E6%B3%A1%E5%92%8C%E6%8D%95%E8%8E%B7">事件委托与冒泡和捕获</a></p>
 </li>
-<li><p><a href="#%E5%AE%9E%E7%8E%B0instanceof">实现instanceof</a></p>
+<li><p><a href="#%E5%AE%9E%E7%8E%B0instanceof">实现 instanceof</a></p>
 </li>
-<li><p><a href="#constructor%E5%92%8Csuper%E5%85%B3%E9%94%AE%E5%AD%97">constructor和super关键字</a></p>
+<li><p><a href="#constructor%E5%92%8Csuper%E5%85%B3%E9%94%AE%E5%AD%97">constructor 和 super 关键字</a></p>
 </li>
 </ul>
-<p><a href="#vue%E9%83%A8%E5%88%86">vue部分</a></p>
+<p><a href="#vue%E9%83%A8%E5%88%86">vue 部分</a></p>
 <ul>
-<li><a href="#vue%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1">vue组件通信</a></li>
-<li><a href="#vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F">vue生命周期父子组件执行顺序</a></li>
+<li><a href="#vue%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1">vue 组件通信</a></li>
+<li><a href="#vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F">vue 生命周期父子组件执行顺序</a></li>
 <li><a href="#%E5%89%8D%E7%AB%AF%E8%B7%AF%E7%94%B1">前端路由</a></li>
-<li><a href="#slot%E6%8F%92%E6%A7%BD">slot插槽</a></li>
+<li><a href="#slot%E6%8F%92%E6%A7%BD">slot 插槽</a></li>
 <li><a href="#keep-alive">keep-alive</a></li>
 <li><a href="#nextTick">nextTick</a></li>
 <li><a href="#mixin">mixin</a></li>
 <li><a href="#vuex">vuex</a></li>
 </ul>
-<p><a href="#%E6%B7%B1%E6%8B%B7%E8%B4%9D">react部分</a></p>
+<p><a href="#%E6%B7%B1%E6%8B%B7%E8%B4%9D">react 部分</a></p>
 <ul>
-<li><a href="#react%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F">react生命周期</a></li>
-<li><a href="#react%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F">react数据响应式</a></li>
+<li><a href="#react%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F">react 生命周期</a></li>
+<li><a href="#react%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F">react 数据响应式</a></li>
 </ul>
-<p><a href="#http%E9%83%A8%E5%88%86">http部分</a></p>
+<p><a href="#http%E9%83%A8%E5%88%86">http 部分</a></p>
 <ul>
-<li><a href="#http%E7%BC%93%E5%AD%98">http缓存</a></li>
-<li><a href="#https%E6%8F%A1%E6%89%8B">https握手</a></li>
-<li><a href="#http1.1%E9%95%BF%E8%BF%9E%E6%8E%A5&http2%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8%E5%8C%BA%E5%88%AB">http1.1长连接&amp;http2多路复用区别</a></li>
+<li><a href="#http%E7%BC%93%E5%AD%98">http 缓存</a></li>
+<li><a href="#https%E6%8F%A1%E6%89%8B">https 握手</a></li>
+<li><a href="#http1-1%E9%95%BF%E8%BF%9E%E6%8E%A5%E5%92%8Chttp2%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8%E5%8C%BA%E5%88%AB">http1.1 长连接和 http2 多路复用区别</a></li>
 </ul>
 <p><a href="#%E5%85%B6%E4%BB%96">其他</a></p>
 <ul>
 <li><a href="#npmRun">npm run</a></li>
-<li><a href="#cookie%E7%9A%84%E5%87%A0%E7%A7%8D%E5%B1%9E%E6%80%A7%E5%92%8C%E4%BD%9C%E7%94%A8">cookie的几种属性和作用</a></li>
-<li><a href="#%E8%BE%93%E5%85%A5url%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%B1%95%E7%A4%BA%E7%BB%8F%E5%8E%86%E4%BA%86%E4%BB%80%E4%B9%88">输入url到页面展示经历了什么</a></li>
+<li><a href="#cookie%E7%9A%84%E5%87%A0%E7%A7%8D%E5%B1%9E%E6%80%A7%E5%92%8C%E4%BD%9C%E7%94%A8">cookie 的几种属性和作用</a></li>
+<li><a href="#%E8%BE%93%E5%85%A5url%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%B1%95%E7%A4%BA%E7%BB%8F%E5%8E%86%E4%BA%86%E4%BB%80%E4%B9%88">输入 url 到页面展示经历了什么</a></li>
 <li><a href="#%E6%87%92%E5%8A%A0%E8%BD%BD">懒加载</a></li>
-<li><a href="#commonjs%E6%A8%A1%E5%9D%97%E5%92%8Ces6%E6%A8%A1%E5%9D%97%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB">commonjs模块和es6模块有什么区别</a></li>
+<li><a href="#commonjs%E6%A8%A1%E5%9D%97%E5%92%8Ces6%E6%A8%A1%E5%9D%97%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB">commonjs 模块和 es6 模块有什么区别</a></li>
 <li><a href="#%E5%89%8D%E7%AB%AF%E4%BC%98%E5%8C%96">前端优化</a></li>
 <li><a href="#%E5%B8%B8%E8%A7%81%E7%AE%97%E6%B3%95%E4%BB%8B%E7%BB%8D">常见算法介绍</a></li>
-<li><a href="#babel%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86">babel工作原理</a></li>
+<li><a href="#babel%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86">babel 工作原理</a></li>
 </ul>
-<h1 id="HTML和CSS"><a href="#HTML和CSS" class="headerlink" title="HTML和CSS"></a>HTML和CSS</h1><h2 id="BFC"><a href="#BFC" class="headerlink" title="BFC"></a>BFC</h2><blockquote>
+<h1 id="HTML-和-CSS"><a href="#HTML-和-CSS" class="headerlink" title="HTML 和 CSS"></a>HTML 和 CSS</h1><h2 id="BFC"><a href="#BFC" class="headerlink" title="BFC"></a>BFC</h2><blockquote>
 <p>全称「块格式化上下文」(Block Formatting Context), 是一块独立的 css 作用域，外部如何变化都影响不到他。</p>
 </blockquote>
 <h5 id="怎么触发："><a href="#怎么触发：" class="headerlink" title="怎么触发："></a>怎么触发：</h5><ul>
@@ -331,16 +331,15 @@
 <li>一个元素大量修改 css，可以设置为 position: fixed | absolute, 这样重排消耗少，因为不用考虑其他元素位置</li>
 <li>react vue 虚拟 dom</li>
 </ol>
-<h2 id="link和-import区别"><a href="#link和-import区别" class="headerlink" title="link和@import区别"></a>link和@import区别</h2><p><code>@import</code>属于css语法，只能加载css，<code>link</code>是html语法，不仅可以加载css，还可以加载网站icon等</p>
-<h2 id="为什么要使用css预处理语言"><a href="#为什么要使用css预处理语言" class="headerlink" title="为什么要使用css预处理语言"></a>为什么要使用css预处理语言</h2><p>类似scss(sass3+)，less等预处理css语言，扩展了css，具备<code>变量</code>、<code>mixins</code>、<code>函数</code>, <code>嵌套</code>，带有<code>作用域</code>，<code>支持块注释 //</code></p>
-<h2 id="src和href的区别"><a href="#src和href的区别" class="headerlink" title="src和href的区别"></a>src和href的区别</h2><p>src用于替代这个元素，而href用于建立这个标签与外部资源之间的关系。src加载资源会阻塞页面，href是加载并行。</p>
+<h2 id="link-和-import-区别"><a href="#link-和-import-区别" class="headerlink" title="link 和@import 区别"></a>link 和@import 区别</h2><p><code>@import</code>属于 css 语法，只能加载 css，<code>link</code>是 html 语法，不仅可以加载 css，还可以加载网站 icon 等</p>
+<h2 id="为什么要使用-css-预处理语言"><a href="#为什么要使用-css-预处理语言" class="headerlink" title="为什么要使用 css 预处理语言"></a>为什么要使用 css 预处理语言</h2><p>类似 scss(sass3+)，less 等预处理 css 语言，扩展了 css，具备<code>变量</code>、<code>mixins</code>、<code>函数</code>, <code>嵌套</code>，带有<code>作用域</code>，<code>支持块注释 //</code></p>
+<h2 id="src-和-href-的区别"><a href="#src-和-href-的区别" class="headerlink" title="src 和 href 的区别"></a>src 和 href 的区别</h2><p>src 用于替代这个元素，而 href 用于建立这个标签与外部资源之间的关系。src 加载资源会阻塞页面，href 是加载并行。</p>
 <p>src:</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>/img.jpg<span class="token punctuation">'</span></span><span class="token punctuation">/></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>/jquery.js<span class="token punctuation">'</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/img.jpg<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/jquery.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>href:</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span> <span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/main.css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/main.css<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h2 id="行内元素特点"><a href="#行内元素特点" class="headerlink" title="行内元素特点"></a>行内元素特点</h2><ul>
 <li>可以设置所有方向<code>margin</code>和<code>padding</code>，但是垂直方向无法更改布局</li>
@@ -352,15 +351,15 @@
 <li>http 请求动态加载 .css 文件</li>
 <li>预编译 css 变量</li>
 </ul>
-<h1 id="js部分"><a href="#js部分" class="headerlink" title="js部分"></a>js部分</h1><h2 id="箭头函数和普通函数区别"><a href="#箭头函数和普通函数区别" class="headerlink" title="箭头函数和普通函数区别"></a>箭头函数和普通函数区别</h2><ul>
-<li>没有自己this，继承父级的this</li>
-<li>没有自己arguments // Uncaught ReferenceError: arguments is not defined</li>
+<h1 id="js-部分"><a href="#js-部分" class="headerlink" title="js 部分"></a>js 部分</h1><h2 id="箭头函数和普通函数区别"><a href="#箭头函数和普通函数区别" class="headerlink" title="箭头函数和普通函数区别"></a>箭头函数和普通函数区别</h2><ul>
+<li>没有自己 this，继承父级的 this</li>
+<li>没有自己 arguments // Uncaught ReferenceError: arguments is not defined</li>
 <li>没有原型 // undefined</li>
 </ul>
-<h2 id="script的defer和async属性区别"><a href="#script的defer和async属性区别" class="headerlink" title="script的defer和async属性区别"></a>script的defer和async属性区别</h2><p>相比于基本的script标签、都可以实现<code>异步加载脚本</code>，只是执行脚本的时机不同，</p>
+<h2 id="script-的-defer-和-async-属性区别"><a href="#script-的-defer-和-async-属性区别" class="headerlink" title="script 的 defer 和 async 属性区别"></a>script 的 defer 和 async 属性区别</h2><p>相比于基本的 script 标签、都可以实现<code>异步加载脚本</code>，只是执行脚本的时机不同，</p>
 <ul>
-<li><strong>async</strong>：加载完成后，<code>立即执行</code>，可以在dom没完全加载执行，如果多个script async，那么哪个<code>先加载完就</code>执行哪个，适合加载<code>无依</code>赖的js</li>
-<li><strong>defer</strong>：加载完成后，等到<code>dom加载完成后</code>执行，如果多个script defer，会严格按照他们的书写顺序<code>依次执行</code>，适合加载<code>互相依赖</code>的js</li>
+<li><strong>async</strong>：加载完成后，<code>立即执行</code>，可以在 dom 没完全加载执行，如果多个 script async，那么哪个<code>先加载完就</code>执行哪个，适合加载<code>无依</code>赖的 js</li>
+<li><strong>defer</strong>：加载完成后，等到<code>dom加载完成后</code>执行，如果多个 script defer，会严格按照他们的书写顺序<code>依次执行</code>，适合加载<code>互相依赖</code>的 js</li>
 </ul>
 <h2 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 冷门深拷贝利用MessageChannel</span>
 <span class="token keyword">function</span> <span class="token function">deepClone</span><span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -510,7 +509,7 @@ str<span class="token punctuation">.</span><span class="token function">split</s
 str<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">"o"</span><span class="token punctuation">,</span> <span class="token string">"a"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// hella world 替换字符，第一个参数可以是正则</span>
 str<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">hello</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ["hello"] 匹配字符串返回一个数组，参数常是正则</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="js垃圾回收机制"><a href="#js垃圾回收机制" class="headerlink" title="js垃圾回收机制"></a>js垃圾回收机制</h2><blockquote>
+<h2 id="js-垃圾回收机制"><a href="#js-垃圾回收机制" class="headerlink" title="js 垃圾回收机制"></a>js 垃圾回收机制</h2><blockquote>
 <p>当内存中的数据不需要时候，js 会自动使用垃圾回收算法释放掉</p>
 </blockquote>
 <ul>
@@ -542,7 +541,7 @@ str<span class="token punctuation">.</span><span class="token function">match</s
 <span class="token comment">// "1,2,3"</span>
 <span class="token operator">...</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="valueOf和toString"><a href="#valueOf和toString" class="headerlink" title="valueOf和toString"></a>valueOf和toString</h2><ul>
+<h2 id="valueOf-和-toString"><a href="#valueOf-和-toString" class="headerlink" title="valueOf 和 toString"></a>valueOf 和 toString</h2><ul>
 <li><strong>valueOf</strong>: 返回对象的原始值表示</li>
 <li><strong>toString</strong>: 返回对象的字符串表示</li>
 </ul>
@@ -563,7 +562,7 @@ str<span class="token punctuation">.</span><span class="token function">match</s
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="proxy和reflect"><a href="#proxy和reflect" class="headerlink" title="proxy和reflect"></a>proxy和reflect</h2><h3 id="proxy"><a href="#proxy" class="headerlink" title="proxy"></a>proxy</h3><blockquote>
+<h2 id="proxy-和-reflect"><a href="#proxy-和-reflect" class="headerlink" title="proxy 和 reflect"></a>proxy 和 reflect</h2><h3 id="proxy"><a href="#proxy" class="headerlink" title="proxy"></a>proxy</h3><blockquote>
 <p>对目标读取、函数调用等操作进行拦截，然后操作处理。它不直接操作对象，而是像代理模式。</p>
 </blockquote>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> target <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
@@ -731,7 +730,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li>addeventListener 可以给一个事件注册多个 listener</li>
 <li>addEventListener 可以控制时间传播行为（捕获/冒泡，使用 removeEventListener 来解决）</li>
 </ul>
-<h2 id="实现instanceof"><a href="#实现instanceof" class="headerlink" title="实现instanceof"></a>实现instanceof</h2><blockquote>
+<h2 id="实现-instanceof"><a href="#实现-instanceof" class="headerlink" title="实现 instanceof"></a>实现 instanceof</h2><blockquote>
 <p>instanceof 运算符用于检测构造函数的 prototype 属性是否出现在某个实例对象的原型链上。<br><img src="/2020/12/21/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/bB3Sj9h8nyoOIVs.png" alt="6D190A1F-A82A-4F86-BC85-3AD9F5EA672B.png"></p>
 </blockquote>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> objProto <span class="token operator">=</span> obj<span class="token punctuation">.</span>__proto__<span class="token punctuation">;</span>
@@ -755,19 +754,19 @@ meat <span class="token keyword">instanceof</span> <span class="token class-name
 meat <span class="token keyword">instanceof</span> <span class="token class-name">Food</span> <span class="token comment">// true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>总的来说就是<code>meat.__proto__.constructor === Meat</code>，由于原型链是一条链，所以循环所有<code>__proto__</code>;<br>直到<code>null</code>为止，符合<code>Meat.prototype === meat.__proto__</code>即返回<code>true</code>，否则返回<code>false</code>。</p>
-<h2 id="constructor和super关键字"><a href="#constructor和super关键字" class="headerlink" title="constructor和super关键字"></a>constructor和super关键字</h2><p><code>class</code>是<code>ES6</code>新增的关键字，为了看起来更像<code>java</code>等面向对象语言，实际上是一个语法糖，等同于<code>ES5</code>的<code>function</code>来创建构造函数。</p>
+<h2 id="constructor-和-super-关键字"><a href="#constructor-和-super-关键字" class="headerlink" title="constructor 和 super 关键字"></a>constructor 和 super 关键字</h2><p><code>class</code>是<code>ES6</code>新增的关键字，为了看起来更像<code>java</code>等面向对象语言，实际上是一个语法糖，等同于<code>ES5</code>的<code>function</code>来创建构造函数。</p>
 <ul>
 <li>constructor ：<code>constructors</code>是 class 中默认的一个关键字，会自动调用该方法，<code>class</code>中必须要有<code>constructor</code>，如果没有，会被默认添加。当 new 时，<code>constructor</code>会被执行返回一个 this，就是实例。</li>
 <li>super ： 当<code>class</code>有继承时，在<code>constructor</code>内部必须执行一遍 super()函数，B 继承 A，<code>super</code>相当于<code>A.prototype.constructor.call(this, props)</code>，另外 super()也指向父亲 A 的原型对象， <a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903638674980872">详细解释</a>。如果当前类和父类都有同名方法，如何区分地获取呢，获取父类：super().fun，获取当前类：fun</li>
 </ul>
-<h1 id="vue部分"><a href="#vue部分" class="headerlink" title="vue部分"></a>vue部分</h1><h2 id="vue组件通信"><a href="#vue组件通信" class="headerlink" title="vue组件通信"></a>vue组件通信</h2><ul>
+<h1 id="vue-部分"><a href="#vue-部分" class="headerlink" title="vue 部分"></a>vue 部分</h1><h2 id="vue-组件通信"><a href="#vue-组件通信" class="headerlink" title="vue 组件通信"></a>vue 组件通信</h2><ul>
 <li>props 和 $emit</li>
 <li>provide inject：在组件 a 声明，在 a 下面所有子组件通过 inject 调用，通过参数传递</li>
 <li>event bus： new 出一个 vue，通过 emit 和 on 来派发和监控</li>
 <li>vuex 全局状态管理</li>
 <li>this.$children 和 this.$parent 层级较深不推荐，provid 可以替代此方法</li>
 </ul>
-<h2 id="vue生命周期父子组件执行顺序"><a href="#vue生命周期父子组件执行顺序" class="headerlink" title="vue生命周期父子组件执行顺序"></a>vue生命周期父子组件执行顺序</h2><ul>
+<h2 id="vue-生命周期父子组件执行顺序"><a href="#vue-生命周期父子组件执行顺序" class="headerlink" title="vue 生命周期父子组件执行顺序"></a>vue 生命周期父子组件执行顺序</h2><ul>
 <li><p>父 beforeCreate -&gt; 父 created -&gt; 父 beforeMount -&gt; 子 beforeCreate -&gt; 子 created -&gt; 子 beforeMount-&gt;子 mounted-&gt;父 mounted</p>
 </li>
 <li><p>子组件更新：父 beforeUpdate -&gt; 子 beforeUpdate -&gt; 子 updated -&gt; 父 updated</p>
@@ -796,7 +795,7 @@ window<span class="token punctuation">.</span>history<span class="token punctuat
 <li>hash 只可以#后部分，必须是同源 url，history 没有限制</li>
 <li>history 需要修改服务器配置，来解决刷新空白问题，hash 本身就是属于前端的，不需要设置</li>
 </ul>
-<h2 id="slot插槽"><a href="#slot插槽" class="headerlink" title="slot插槽"></a>slot插槽</h2><ul>
+<h2 id="slot-插槽"><a href="#slot-插槽" class="headerlink" title="slot 插槽"></a>slot 插槽</h2><ul>
 <li>匿名插插: 子组件包裹的内容会被显示到<code>slot</code>标签中</li>
 </ul>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>child<span class="token operator">></span>父给子的内容<span class="token operator">&lt;</span><span class="token operator">/</span>child<span class="token operator">></span>
@@ -820,10 +819,10 @@ window<span class="token punctuation">.</span>history<span class="token punctuat
  <span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> slotProps<span class="token punctuation">.</span>user<span class="token punctuation">.</span>firstName <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>myslot<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="keep-alive"><a href="#keep-alive" class="headerlink" title="keep-alive"></a>keep-alive</h2><p>keep-live是vue提供的内置缓存组件，可以保存组件状态，避免重新渲染，keep-alive有三个参数：</p>
+<h2 id="keep-alive"><a href="#keep-alive" class="headerlink" title="keep-alive"></a>keep-alive</h2><p>keep-live 是 vue 提供的内置缓存组件，可以保存组件状态，避免重新渲染，keep-alive 有三个参数：</p>
 <ul>
 <li>include 匹配的组件会被缓存，参数：字符串、数组、正则</li>
-<li>exclude 匹配的组件不会被缓存，参数：字符串、数组、正则，和include同时存在一个组件的的话，exclude优先级更高</li>
+<li>exclude 匹配的组件不会被缓存，参数：字符串、数组、正则，和 include 同时存在一个组件的的话，exclude 优先级更高</li>
 <li>max 可以限制最大可以缓存组件的数量，字符串或者数字</li>
 </ul>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 组件name为a或者b的组件缓存 <span class="token operator">--</span><span class="token operator">></span>
@@ -832,12 +831,12 @@ window<span class="token punctuation">.</span>history<span class="token punctuat
 <span class="token operator">&lt;</span><span class="token operator">/</span>keep<span class="token operator">-</span>alive<span class="token operator">></span>
 
 <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 组件name为c的组件不缓存 <span class="token operator">--</span><span class="token operator">></span>
-<span class="token operator">&lt;</span>keep<span class="token operator">-</span>alive exclude<span class="token operator">=</span><span class="token string">"c"</span><span class="token operator">></span> 
+<span class="token operator">&lt;</span>keep<span class="token operator">-</span>alive exclude<span class="token operator">=</span><span class="token string">"c"</span><span class="token operator">></span>
   <span class="token operator">&lt;</span>component<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>component<span class="token operator">></span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>keep<span class="token operator">-</span>alive<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>缓存组件会多出两个生命周期，<code>activated</code>和<code>deactivated</code>，渲染和销毁</p>
-<p>keep-alive可配合 router-view 来实现组件缓存</p>
+<p>keep-alive 可配合 router-view 来实现组件缓存</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>keep<span class="token operator">-</span>alive<span class="token operator">></span>
     <span class="token operator">&lt;</span>router<span class="token operator">-</span>view v<span class="token operator">-</span><span class="token keyword">if</span><span class="token operator">=</span><span class="token string">"$route.meta.keepAlive"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>router<span class="token operator">-</span>view<span class="token operator">></span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>keep<span class="token operator">-</span>alive<span class="token operator">></span>
@@ -865,11 +864,11 @@ window<span class="token punctuation">.</span>history<span class="token punctuat
   <span class="token punctuation">]</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="nextTick"><a href="#nextTick" class="headerlink" title="nextTick"></a>nextTick</h2><p>nextTick可以获取下次最新 dom 的方法，因为vue的dom更新策略是异步的，只有一个事件循环结束后才会被应用来更新dom，这导致数据的修改不会立即表现在dom上，如果要获取更新后的 dom 状态，这时候就需要用到nextTick</p>
+<h2 id="nextTick"><a href="#nextTick" class="headerlink" title="nextTick"></a>nextTick</h2><p>nextTick 可以获取下次最新 dom 的方法，因为 vue 的 dom 更新策略是异步的，只有一个事件循环结束后才会被应用来更新 dom，这导致数据的修改不会立即表现在 dom 上，如果要获取更新后的 dom 状态，这时候就需要用到 nextTick</p>
 <p>一些场景：</p>
 <ul>
-<li>created中想要获取DOM</li>
-<li>更改数据获取最新的dom</li>
+<li>created 中想要获取 DOM</li>
+<li>更改数据获取最新的 dom</li>
 </ul>
 <h2 id="mixin"><a href="#mixin" class="headerlink" title="mixin"></a>mixin</h2><p>vue mixin 是针对组件间功能共享来做的。可以对组件的任意部分进行 mixin，也就是说不同的组件，想使用同一个数组，或者方法，那么 mixin 就是来做这个事的，把公共部分提取出来作为 mixin</p>
 <p>声明：</p>
@@ -947,7 +946,7 @@ methods<span class="token operator">:</span> <span class="token punctuation">&#1
 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h1 id="react-部分"><a href="#react-部分" class="headerlink" title="react 部分"></a>react 部分</h1><h2 id="react生命周期"><a href="#react生命周期" class="headerlink" title="react生命周期"></a>react生命周期</h2><ul>
+<h1 id="react-部分"><a href="#react-部分" class="headerlink" title="react 部分"></a>react 部分</h1><h2 id="react-生命周期"><a href="#react-生命周期" class="headerlink" title="react 生命周期"></a>react 生命周期</h2><ul>
 <li><strong>componentWillMount</strong>：在渲染前调用，客户端服务端都会调用</li>
 <li><strong>componentDidMount</strong>：第一次渲染后调用，只在客户端</li>
 <li><strong>componentWillReceiveProps</strong>： 接收新的 props 被调用，初始化时不会被调用</li>
@@ -956,16 +955,16 @@ methods<span class="token operator">:</span> <span class="token punctuation">&#1
 <li><strong>componentDidUpdate</strong>：组件完成更新后调用。初始化时不会被调用</li>
 <li><strong>componentWillUnmount</strong>： 组件要销毁前调用</li>
 </ul>
-<h2 id="react数据响应式"><a href="#react数据响应式" class="headerlink" title="react数据响应式"></a>react数据响应式</h2><p>react 的响应式是使用 diff 算法实现的。react 在 state 改变时，会调用 render() 方法，生成一个虚拟 DOM 树，React 会将这棵树与上一次生成的树进行比较，找出其中的差异，并更新差异的部分。这个过程是递归的，react 会以当前组件为根，递归比较所以子节点。为了优化性能，React 提供了 shouldComponentUpdate 生命周期方法，这个方法有两个参数，<strong>nextProps</strong>和<strong>nextState</strong>，表示上次props和上次stage，返回值是布尔值，如果这个方法返回 false，react 就跳过这个组件，不做 VDOM 比较，也不更新组件。</p>
-<p>在react16+版本，对diff过程进行了优化，从原来的diff树结构+递归的方式优化成fiber双向链表+循环执行。整个的diff过程分为render阶段和commit阶段，render就是对比过程，找到需要改变dom的那部分，commit就是执行改变dom的那部分，render阶段是可以分段的（中断，然后继续完成），类似原生的<strong>requestIdleCallback</strong>方法，在每个16ms帧内，会先执行用户输入，事件回调等优先级高的js任务。之后剩下的时间执行分段的render部分来进行数据更新，保证视觉上的页面流程度。</p>
-<h1 id="http部分"><a href="#http部分" class="headerlink" title="http部分"></a>http部分</h1><h2 id="http缓存"><a href="#http缓存" class="headerlink" title="http缓存"></a>http缓存</h2><p>分为 <strong>强缓存</strong> 和 <strong>协商缓存</strong>，如果同时存在，<strong>强缓存</strong> 优先 <strong>协商缓存</strong></p>
+<h2 id="react-数据响应式"><a href="#react-数据响应式" class="headerlink" title="react 数据响应式"></a>react 数据响应式</h2><p>react 的响应式是使用 diff 算法实现的。react 在 state 改变时，会调用 render() 方法，生成一个虚拟 DOM 树，React 会将这棵树与上一次生成的树进行比较，找出其中的差异，并更新差异的部分。这个过程是递归的，react 会以当前组件为根，递归比较所以子节点。为了优化性能，React 提供了 shouldComponentUpdate 生命周期方法，这个方法有两个参数，<strong>nextProps</strong>和<strong>nextState</strong>，表示上次 props 和上次 stage，返回值是布尔值，如果这个方法返回 false，react 就跳过这个组件，不做 VDOM 比较，也不更新组件。</p>
+<p>在 react16+版本，对 diff 过程进行了优化，从原来的 diff 树结构+递归的方式优化成 fiber 双向链表+循环执行。整个的 diff 过程分为 render 阶段和 commit 阶段，render 就是对比过程，找到需要改变 dom 的那部分，commit 就是执行改变 dom 的那部分，render 阶段是可以分段的（中断，然后继续完成），类似原生的<strong>requestIdleCallback</strong>方法，在每个 16ms 帧内，会先执行用户输入，事件回调等优先级高的 js 任务。之后剩下的时间执行分段的 render 部分来进行数据更新，保证视觉上的页面流程度。</p>
+<h1 id="http-部分"><a href="#http-部分" class="headerlink" title="http 部分"></a>http 部分</h1><h2 id="http-缓存"><a href="#http-缓存" class="headerlink" title="http 缓存"></a>http 缓存</h2><p>分为 <strong>强缓存</strong> 和 <strong>协商缓存</strong>，如果同时存在，<strong>强缓存</strong> 优先 <strong>协商缓存</strong></p>
 <h4 id="强缓存："><a href="#强缓存：" class="headerlink" title="强缓存："></a>强缓存：</h4><ul>
-<li>响应头 Expires：<em>Fri, 31 Dec 2024 23:59:59 GMT</em>，在这个时间之前，直接读缓存，否则请求新内容，因为值是一个服务端返回的时间，这是 http 1.0 的产物，如果客户端和服务端时间不一致，就会和预期不符，所以在 http 1.1 中新增 Cache Control 来控制缓存</li>
-<li>Cache Control：max-age=x秒，在x秒内直接读缓存，避免了 expires 时间不一致问题</li>
+<li>响应头 Expires：_Fri, 31 Dec 2024 23:59:59 GMT_，在这个时间之前，直接读缓存，否则请求新内容，因为值是一个服务端返回的时间，这是 http 1.0 的产物，如果客户端和服务端时间不一致，就会和预期不符，所以在 http 1.1 中新增 Cache Control 来控制缓存</li>
+<li>Cache Control：max-age=x 秒，在 x 秒内直接读缓存，避免了 expires 时间不一致问题</li>
 </ul>
-<p>Cache Control 其他的value：</p>
+<p>Cache Control 其他的 value：</p>
 <ul>
-<li>Private:  私有缓存，资源可以仅可以被客户端缓存（默认值）</li>
+<li>Private: 私有缓存，资源可以仅可以被客户端缓存（默认值）</li>
 <li>Public: 资源可以被任何缓存（包括中间代理服务器）缓存</li>
 <li>No-Cache: 协商缓存</li>
 <li>No-Store: 绝对不缓存</li>
@@ -973,22 +972,24 @@ methods<span class="token operator">:</span> <span class="token punctuation">&#1
 </ul>
 <h4 id="协商缓存-（Last-Modified-优先-ETag）"><a href="#协商缓存-（Last-Modified-优先-ETag）" class="headerlink" title="协商缓存 （Last-Modified 优先 ETag）"></a>协商缓存 （Last-Modified 优先 ETag）</h4><p>当 Cache Control 设置为 No-Cache 时使用</p>
 <ul>
-<li>Last-Modified / If-Modified-Since：服务器会返回上次修改时间 Last-Modified，浏览器下次请求时请求头会带上 If-Modified-Since ，然后由服务端验证，如果 If-Modified-Since 在 Last-Modified 时间以内 ，就返回304，浏览器读缓存，否则返回新内容</li>
-<li>ETag / If-None-Match：服务器会返回内容hash ETag响应头，浏览器下次请求时请求头会带上 If-None-Match ，然后由服务端验证，如果一致，就返回304，浏览器读缓存，否则返回新内容</li>
+<li>Last-Modified / If-Modified-Since：服务器会返回上次修改时间 Last-Modified，浏览器下次请求时请求头会带上 If-Modified-Since ，然后由服务端验证，如果 If-Modified-Since 在 Last-Modified 时间以内 ，就返回 304，浏览器读缓存，否则返回新内容</li>
+<li>ETag / If-None-Match：服务器会返回内容 hash ETag 响应头，浏览器下次请求时请求头会带上 If-None-Match ，然后由服务端验证，如果一致，就返回 304，浏览器读缓存，否则返回新内容</li>
 </ul>
 <p>附上一张说明图：</p>
 <p><img src="/2020/12/21/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/FvAIM258yHCTQba.png" alt="632130-20170210141453338-1263276228.png"></p>
-<h2 id="https握手"><a href="#https握手" class="headerlink" title="https握手"></a>https握手</h2><p>https 是 http 的安全扩展，相当于 HTTP + SSL(TLS) = HTTPS。SSL 即安全套接字层，它在 OSI 七层网络模型中处于第五层即网络层，TLS 是 SSL 的新版本，最后一个 SSL 3.0 版本在2015年废弃，之后就是 TLS，现在常见的 TLS 版本是 1.2 和 1.3 版本。那么 TLS 是如何实现的呢？</p>
+<h2 id="https-握手"><a href="#https-握手" class="headerlink" title="https 握手"></a>https 握手</h2><p>https 是 http 的安全扩展，相当于 HTTP + SSL(TLS) = HTTPS。SSL 即安全套接字层，它在 OSI 七层网络模型中处于第五层即网络层，TLS 是 SSL 的新版本，最后一个 SSL 3.0 版本在 2015 年废弃，之后就是 TLS，现在常见的 TLS 版本是 1.2 和 1.3 版本。那么 TLS 是如何实现的呢？</p>
 <ul>
 <li><strong>浏览器</strong> =&gt; 服务器：请求发起，建立 SSL 连接，发送 TLS 协议版本号 + 支持的加密方法列表 + 客户端随机数</li>
 <li>服务器 =&gt; <strong>浏览器</strong>：判断加密协议版本是否一致，并确认加密方法，都没问题则返回服务器证书 + 服务端随机数</li>
 <li><strong>浏览器</strong> =&gt; 服务器：收到服务器证书，检查颁发机构、过期时间、域名，没有问题，则生成一个字符串（通过上面 客户端随机数 + 服务端随机数 生成），并用公钥（从服务器证书里取出）加密（非对称加密），发给服务器</li>
 <li>服务器 =&gt; <strong>浏览器</strong>：服务器用自己的私钥解密，得到这个字符串，后续使用这个字符串进行对称加密进行通信</li>
 </ul>
-<h2 id="http1-1长连接-amp-http2多路复用区别"><a href="#http1-1长连接-amp-http2多路复用区别" class="headerlink" title="http1.1长连接&amp;http2多路复用区别"></a>http1.1长连接&amp;http2多路复用区别</h2><p><strong>http1.1 长连接</strong>：<strong>同一个域名访问同一个文件的多个请求</strong>都可以复用一个 tcp 连接（不用像 1.0 一样 每次请求都需要重新建立连接，但不是并行，只能按顺序执行。</p>
+<h2 id="http1-1长连接和http2多路复用区别"> http1.1长连接和http2多路复用区别</h2>
+
+<p><strong>http1.1 长连接</strong>：<strong>同一个域名访问同一个文件的多个请求</strong>都可以复用一个 tcp 连接（不用像 1.0 一样 每次请求都需要重新建立连接，但不是并行，只能按顺序执行。</p>
 <p><strong>http2 多路复用</strong>：<strong>同一个域名访问多个文件的多个请求</strong>也可以复用一个 tcp 连接，且多个请求可以被并行处理。</p>
 <h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="npmRun"><a href="#npmRun" class="headerlink" title="npmRun"></a>npmRun</h2><p>会自动到 package.json 找到对应的命令执行。如果没有全局命令，会自动到<code>node_modules/.bin/</code>下找到对应可执行文件执行，这时<code>npm run xxx</code>等同于直接调用<code>./node_modules/.bin/xxx</code></p>
-<h2 id="cookie的几种属性和作用"><a href="#cookie的几种属性和作用" class="headerlink" title="cookie的几种属性和作用"></a>cookie的几种属性和作用</h2><ul>
+<h2 id="cookie-的几种属性和作用"><a href="#cookie-的几种属性和作用" class="headerlink" title="cookie 的几种属性和作用"></a>cookie 的几种属性和作用</h2><ul>
 <li><strong>name</strong>: 名字</li>
 <li><strong>value</strong>: 值</li>
 <li><strong>domain</strong>: 可以访问此 cookie 的域名</li>
@@ -1003,7 +1004,7 @@ methods<span class="token operator">:</span> <span class="token punctuation">&#1
 <li><strong>secure</strong>: 是否只能使用 https 传递此 cookie</li>
 <li><strong>expires</strong>: 过期时间；值是时间意思是到这个时间，cookie 失效，否则是 session，即退出浏览器后自动失效</li>
 </ul>
-<h2 id="输入url到页面展示经历了什么"><a href="#输入url到页面展示经历了什么" class="headerlink" title="输入url到页面展示经历了什么"></a>输入url到页面展示经历了什么</h2><ul>
+<h2 id="输入-url-到页面展示经历了什么"><a href="#输入-url-到页面展示经历了什么" class="headerlink" title="输入 url 到页面展示经历了什么"></a>输入 url 到页面展示经历了什么</h2><ul>
 <li><p><strong>dns 解析</strong>：按照这个步骤查询，找到 ip，立即中断返回给客户端（浏览器缓存 =&gt; 操作系统缓存(host) =&gt; 路由器缓存 =&gt; 本地服务器缓存 =&gt; isp dnf 服务器查询 =&gt; 根 dns 服务器）</p>
 </li>
 <li><p><strong>tcp 三次握手</strong></p>
@@ -1039,7 +1040,7 @@ methods<span class="token operator">:</span> <span class="token punctuation">&#1
 <span class="token comment">// 判断img在可视区域内：</span>
 imgOffsetTop <span class="token operator">&lt;</span> clientHeight <span class="token operator">+</span> scrollTop<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="commonjs模块和es6模块有什么区别"><a href="#commonjs模块和es6模块有什么区别" class="headerlink" title="commonjs模块和es6模块有什么区别"></a>commonjs模块和es6模块有什么区别</h2><p>commonjs:</p>
+<h2 id="commonjs-模块和-es6-模块有什么区别"><a href="#commonjs-模块和-es6-模块有什么区别" class="headerlink" title="commonjs 模块和 es6 模块有什么区别"></a>commonjs 模块和 es6 模块有什么区别</h2><p>commonjs:</p>
 <ul>
 <li>对于基本数据类型，是值的拷贝</li>
 <li>对于复杂数据类型，是浅拷贝，也就是修改一个模块的值，引用他的值也会发生改变</li>
@@ -1074,7 +1075,7 @@ imgOffsetTop <span class="token operator">&lt;</span> clientHeight <span class="
 <li><p><strong>动态规划</strong>：动态规划是通过把原问题分解为相对简单的子问题的方式求解复杂问题的方法。动态规划常常适用于有重叠子问题和最优子结构性质的问题，动态规划方法所耗时间往往远少于朴素解法。动态规划背后的基本思想非常简单。大致上，若要解一个给定问题，我们需要解其不同部分（即子问题），再根据子问题的解以得出原问题的解。动态规划往往用于优化递归问题，例如斐波那契数列，如果运用递归的方式来求解会重复计算很多相同的子问题，利用动态规划的思想可以减少计算量。</p>
 </li>
 </ul>
-<h2 id="babel工作原理"><a href="#babel工作原理" class="headerlink" title="babel工作原理"></a>babel工作原理</h2><blockquote>
+<h2 id="babel-工作原理"><a href="#babel-工作原理" class="headerlink" title="babel 工作原理"></a>babel 工作原理</h2><blockquote>
 <p>在计算机科学中，抽象语法树（Abstract Syntax Tree，AST），或简称语法树（Syntax tree），是源代码语法结构的一种抽象表示。它以树状的形式表现编程语言的语法结构，树上的每个节点都表示源代码中的一种结构。简单来说就是一种描述源代码的结构，用于被计算机识别到，并成语言引擎执行</p>
 </blockquote>
 <p>工作原理大致可以理解成，<code>字符串输入</code>=&gt;<code>转换</code>=&gt;<code>输出</code></p>
