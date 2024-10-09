@@ -11,7 +11,7 @@ desc: "👋 This is slc3a2. welcome. just to record some fun moment here 😁"
 
 #menu
 menu:
-  My Application: /myApplication
+  Application: /application
   Sponsor: /sponsor
   # About: /About
 
