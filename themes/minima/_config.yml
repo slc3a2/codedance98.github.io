@@ -5,13 +5,13 @@ title: "⬅ Click Here"
 #owner
 owner: "slc3a2"
 email: slc3a2@gmail.com
-info: "A web developer from China 🇨🇳"
+info: "A frontend developer from China 🇨🇳"
 #description
-desc: "👋 This is slc3a2. welcome. here is just to record some fun 😁"
+desc: "👋 This is slc3a2. welcome. just to record some fun moment here 😁"
 
 #menu
 menu:
-  My Application: /myApplication
+  Application: /application
   Sponsor: /sponsor
   # About: /About
 
@@ -58,4 +58,4 @@ mathjax:
   enable: true
   cdn: https://cdn.jsdelivr.net/npm/mathjax@2.7.8/MathJax.js?config=TeX-AMS-MML_HTMLorMML
 
-google_analytics: 'G-52Y2B2P1QW'
+google_analytics: "G-52Y2B2P1QW"
