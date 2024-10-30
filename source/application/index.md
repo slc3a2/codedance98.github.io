@@ -37,7 +37,7 @@ tags: []
 ❇️ 永久免费，这是一个开源项目，随时可以查看最新的源代码
 ❇️ 制作他的初衷是我有干眼症并且经常晚上浏览页面，自己需要这样的一个工具，后来发布到 Chrome 商店。希望可以方便到有需要的朋友
 
-![introduction image01](./index/dimmer/img1.png)
+![introduction image01](./index/dimmer/intro.jpg)
 
 [开源仓库地址](https://github.com/slc3a2/dimmer)
 
