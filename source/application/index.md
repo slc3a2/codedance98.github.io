@@ -37,7 +37,7 @@ tags: []
 ❇️ 永久免费，这是一个开源项目，随时可以查看最新的源代码
 ❇️ 制作他的初衷是我有干眼症并且经常晚上浏览页面，自己需要这样的一个工具，后来发布到 Chrome 商店。希望可以方便到有需要的朋友
 
-![introduction image01](./index/dimmer/img1.png)
+![introduction image01](./index/dimmer/intro.jpg)
 
 [开源仓库地址](https://github.com/slc3a2/dimmer)
 
@@ -63,7 +63,7 @@ tags: []
 - 内部单元组件使⽤ Slot 插槽，可⾼度⾃定义内容
 - ⽀持 六种参数 和 两种事件 设置：翻⻚⾼度，持续滚动时⻓，快速翻⻚⾼度、模拟点击 ⽅法等
 
-![introduction image01](./index/ohmybox/img1.gif)
+<img src="./index/ohmybox/img1.gif" width="300">
 
 [开源仓库地址](https://github.com/slc3a2/oh-my-box)
 
