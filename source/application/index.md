@@ -63,7 +63,7 @@ tags: []
 - 内部单元组件使⽤ Slot 插槽，可⾼度⾃定义内容
 - ⽀持 六种参数 和 两种事件 设置：翻⻚⾼度，持续滚动时⻓，快速翻⻚⾼度、模拟点击 ⽅法等
 
-![introduction image01](./index/ohmybox/img1.gif)
+<img src="./index/ohmybox/img1.gif" width="300">
 
 [开源仓库地址](https://github.com/slc3a2/oh-my-box)
 
