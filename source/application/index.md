@@ -50,7 +50,7 @@ tags: []
 - 基于开源脚⼿架⼯具 vtemp-chrome-extension， 来实现使⽤ Vue 开发
 - 可编辑 Cookie 8 种属性，并⽀持以 JSON 导出 本⻚⾯全部 Cookie
 
-![introduction image01](./index/ohmycookie/img1.png)
+![introduction image01](./index/ohmycookie/img1.jpeg)
 
 [开源仓库地址](https://github.com/slc3a2/oh-my-cookie)
 
